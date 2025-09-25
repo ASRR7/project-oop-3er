@@ -1,2 +1,7 @@
-# project-oop-3er
-OOP Project for use Classes, Inheritance, Encapsulation, and so on.
+# Project OOP - 3rd Semester.
+OOP Project for use Classes, Inheritance, Encapsulation, and the major concepts of OOP.
+
+#Authors:
+## - Cruz Cardoso André Iván
+## - Hidalgo Rodgríguez César
+## - Serrepe Ramírez Julio Alejandro
