@@ -3,5 +3,5 @@ OOP Project for use Classes, Inheritance, Encapsulation, and the major concepts 
 
 #Authors:
 ## - Cruz Cardoso André Iván
-## - Hidalgo Rodgríguez César
+## - Hidalgo Rodríguez César
 ## - Serrepe Ramírez Julio Alejandro
