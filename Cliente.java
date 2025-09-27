@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 public class Cliente{
     public static int idContador = 0;
     public int id;
@@ -6,7 +6,7 @@ public class Cliente{
     public double cuenta;
 
 
-    public Cliente(){
+    Cliente(){
         idContador++;
         this.id = idContador;
     }
