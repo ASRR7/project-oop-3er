@@ -15,7 +15,7 @@ public class Libro {
     private String estatus;
     private boolean enInventario;
     private int id;
-    public static int idContador;
+    public static int idContador=0;
 
     public Libro(String titulo, String autor, String editorial, String genero, double precio) {
         this.titulo = titulo;
@@ -50,7 +50,7 @@ public class Libro {
         return precio;
     }
 
-    public int getIsbn() {
+    public int getISBN() {
         return isbn;
     }
 
@@ -90,7 +90,7 @@ public class Libro {
         this.precio = precio;
     }
 
-    public void setIsbn(int isbn) {
+    public void setISBN(int isbn) {
         this.isbn = isbn;
     }
 
@@ -104,10 +104,6 @@ public class Libro {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public static void setIdContador(int idContador) {
-        Libro.idContador = idContador;
     }
 
     public String toString() {
