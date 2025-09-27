@@ -22,8 +22,8 @@ public class Libro {
         this.autor = autor;
         this.editorial = editorial;
         this.genero = genero;
+        this.isbn=aleatorio.nextInt(50000) + 10000;
         this.precio = precio;
-        this.isbn = aleatorio.nextInt(50000) + 10000;
         this.estatus = "Disponible";
         this.enInventario = true;
         this.id = idContador;
