@@ -1,11 +1,6 @@
-
 import java.util.Random;
-//hola
 
 public class Libro {
-
-    Random aleatorio = new Random();
-    //atributos perrones 9 
     private String titulo;
     private String autor;
     private String editorial;
@@ -23,12 +18,16 @@ public class Libro {
         this.editorial = editorial;
         this.genero = genero;
         this.precio = precio;
-        this.ISBN = aleatorio.nextInt(50000) + 10000;
+        this.ISBN = Libro.genISBN();
         this.estatus = "Disponible";
         this.enInventario = true;
-        this.id = idContador;
+        this.id = Libro.getIdContador();
     }
 
+    private static int genISBN(){
+        Random aleatorio = new Random();
+        return aleatorio.nextInt(50000) + 10000;
+    }
     //setters y getters
     public String getTitulo() {
         return titulo;
@@ -67,7 +66,7 @@ public class Libro {
     }
 
     public static int getIdContador() {
-        return idContador;
+        return idContador++;
     }
 
     public void setTitulo(String titulo) {
@@ -104,10 +103,6 @@ public class Libro {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public static void setIdContador(int idContador) {
-        Libro.idContador = idContador;
     }
 
     public String toString() {
