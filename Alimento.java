@@ -2,7 +2,7 @@ public class Alimento{
     private String nombreAlimento;
     private double precio;
     private int codigoBarras;
-    private static int codigoBarrasInicial = 576341235420;
+    private static int codigoBarrasInicial = 576235420;
 
     public Alimento(String nombreAlimento, double precio){
         this.nombreAlimento = nombreAlimento;
@@ -27,8 +27,8 @@ public class Alimento{
         this.nombreAlimento = nombreAlimento;
     }
 
-    public static int getCodigoBarras() {
-        return getCodigoBarras;
+    public int getCodigoBarras() {
+        return codigoBarras;
     }
 
 

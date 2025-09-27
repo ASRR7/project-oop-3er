@@ -48,10 +48,11 @@ public class Inventario {
 
     public Alimento hayAlimento(String alimentoNombre){
         for ( Alimento alimento : this.getAlimentos() ) {
-            if( alimentoNombre.equals( alimento.getNombre() ) ){
+            if( alimentoNombre.equals( alimento.getNombreAlimento() ) ){
                 return alimento;
             }
         }
+        return null;
     }
 
     public void quitarAlimento(String alimentoNombre){

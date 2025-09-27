@@ -3,7 +3,7 @@ public class Cliente{
     public static int idContador = 0;
 
     private int id;
-    private String nombre = '';
+    private String nombre = "";
     private ArrayList<Libro> librosRentados = new ArrayList<>();
     private double cuenta;
 
@@ -18,7 +18,7 @@ public class Cliente{
         this.nombre = nombre;
     }
 
-    public mostrarInfo(){
+    public void mostrarInfo(){
         System.out.println("ID: "+ id);
         if (nombre.equals("")){
             System.out.println("No se ha asignado un nombre");
