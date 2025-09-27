@@ -11,7 +11,7 @@ public class Libro {
     private String editorial;
     private String genero;
     private double precio;
-    private int isbn;
+    private int ISBN;
     private String estatus;
     private boolean enInventario;
     private int id;
@@ -23,7 +23,7 @@ public class Libro {
         this.editorial = editorial;
         this.genero = genero;
         this.precio = precio;
-        this.isbn = aleatorio.nextInt(50000) + 10000;
+        this.ISBN = aleatorio.nextInt(50000) + 10000;
         this.estatus = "Disponible";
         this.enInventario = true;
         this.id = idContador;
@@ -50,8 +50,8 @@ public class Libro {
         return precio;
     }
 
-    public int getIsbn() {
-        return isbn;
+    public int getISBN() {
+        return ISBN;
     }
 
     public String getEstatus() {
@@ -90,8 +90,8 @@ public class Libro {
         this.precio = precio;
     }
 
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
     }
 
     public void setEstatus(String estatus) {
@@ -111,6 +111,6 @@ public class Libro {
     }
 
     public String toString() {
-        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + isbn + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
+        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
     }
 }

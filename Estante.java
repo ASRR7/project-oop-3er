@@ -40,7 +40,7 @@ public class Estante {
     public int buscarISBN(String titulo){ //Retorna el libro encontrado
         for (Libro libro : this.getLibros()) {
             if( titulo.equals( libro.getTitulo() ) ){
-                return libro.getIsbn();
+                return libro.getISBN();
             }
         }
         return -1;
