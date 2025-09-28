@@ -20,17 +20,18 @@ public class Principal {
             sc.nextLine();
             switch (opcion) {
                 case 1:
-                    System.out.println("Cual es tu nombre");
+                    System.out.println("Ingresa tu nombre");
                     nombreCliente = sc.nextLine();
                     Cliente nuevo = new Cliente(nombreCliente);
                     Clientes.add(nuevo);
+                    break;
                 case 6:
                     System.out.println("Saliendo");
+                    break;
                 default:
                     System.out.println("Opcion no valida"); 
             }
         } while (opcion != 6);
+        sc.close();
     }
-
-    
 }
