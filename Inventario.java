@@ -97,6 +97,4 @@ public class Inventario {
         alimentos.add(nuevoAlimento);
         System.out.println("Alimento agregado correctamente c:");
     }
-
-
 }
