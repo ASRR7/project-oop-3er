@@ -41,6 +41,15 @@ public class Inventario {
         return this.estantes;
     }
 
+    public Estante getEstanteGenero(String genero){
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            if ( genero.equals( estante.getValue().getGenero() ) ) {
+                return estante.getValue();
+            }
+        }
+        return -1; //TODO: Arreglar retorno
+    }
+
     public HashSet<Alimento> getAlimentos(){
         return this.alimentos;
     }

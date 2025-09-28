@@ -54,10 +54,10 @@ public class Estante {
         }
         return -1;
     }
-    public int hacerIndisponible(Libro libroNoDisponible){
+    public int hacerNoDisponible(Libro libroNoDisponible){
         for(Libro libro: libros){
-            if (libroNoDisponible.getId()== libro.getId()) {
-                libro.setEstatus("Disponible");
+            if (libroNoDisponible.getId() == libro.getId()) {
+                libro.setEstatus("No disponible");
                 return 0;
             }
         }
@@ -65,7 +65,7 @@ public class Estante {
     }
 
 
-    public int buscarISBN(String titulo){ //Retorna el libro encontrado
+    public int buscarISBN(String titulo){ //Retorna el isbn del libro encontrado
         for (Libro libro : this.getLibros()) {
             if( titulo.equals( libro.getTitulo() ) ){
                 return libro.getISBN();

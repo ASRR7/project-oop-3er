@@ -1,44 +1,35 @@
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+
 public class Cliente{
     public static int idContador = 0;
-
     private int id;
-    private String nombre = "";
-    private ArrayList<Libro> librosRentados = new ArrayList<>();
+    private String nombre;
+    private ArrayList<Libro> librosRentados;
     private double cuenta;
 
-
-    public Cliente(){
-        idContador++;
-        this.id = idContador;
-    }
-    public Cliente(String nombre){
+    Cliente(String nombre){
         idContador++;
         this.id = idContador;
         this.nombre = nombre;
+        this.librosRentados = new ArrayList<>();
     }
 
     public void mostrarInfo(){
         System.out.println("ID: "+ id);
-        if (nombre.equals("")){
-            System.out.println("No se ha asignado un nombre");
-        }
-        else{
-            System.out.println(nombre);
-        }
-        System.out.println("Cuenta: "+cuenta);
+        
+        System.out.println("Cuenta: "+ cuenta);
 
     }
 
     public void pagarCuenta(double pago){
-        cuenta-=pago;
+        cuenta -= pago;
         System.out.println("Su cuenta actual es de: "+ cuenta);
     }
 
     public void cobrar(double cobro){
-        cuenta+=cobro;
+        cuenta += cobro;
         System.out.println("Su cuenta actual es de: "+ cuenta);
     }
 
@@ -49,11 +40,11 @@ public class Cliente{
     * To do :Agregar metodo para devolver libro a inventario
     * */
     public void rentarLibro(Libro libroRentado, Inventario inventario){
-        HashMap<String, Estante> estantes = inventario.getEstantes();
+        Estante estante = inventario.getEstanteGenero(libroRentado.getGenero());
 
-        for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
-            if (libroRentado.getGenero().equals(estante.getGenero())){
-                estante.getValue().hacerIndisponible(libroRentado);
+        for ( Libro libro : estante.getLibros() ) {
+            if ( libroRentado.getISBN() == libro.getISBN() ){
+                estante.hacerNoDisponible(libroRentado);
                 librosRentados.add(libroRentado);
                 break;
             }
@@ -64,7 +55,7 @@ public class Cliente{
         HashMap<String, Estante> estantes = inventario.getEstantes();
 
         for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
-            if (libroRentado.getGenero().equals(estante.getGenero())){
+            if ( libroRentado.getGenero().equals( estante.getValue().getGenero() ) ){
                 estante.getValue().hacerDisponible(libroRentado);
                 int contador = 0;
                 for(Libro libro: librosRentados){
@@ -83,8 +74,6 @@ public class Cliente{
     public int getId() {
         return id;
     }
-
-
 
     public String getNombre() {
         return nombre;
