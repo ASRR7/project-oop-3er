@@ -92,6 +92,11 @@ public class Inventario {
         }
         System.out.println("\n");
     }
+    public void agregarAlimento(String nombreAlimento, double precio){
+        Alimento nuevoAlimento = new Alimento(nombreAlimento,precio);
+        alimentos.add(nuevoAlimento);
+        System.out.println("Alimento agregado correctamente c:");
+    }
 
 
 }
