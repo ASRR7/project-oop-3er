@@ -70,7 +70,7 @@ public class Cliente{
 
     public void quitarLibro(Libro libroRentado){
         int contador = 0;
-        int id = libroRentado.getId()
+        int id = libroRentado.getId();
         for(Libro libro: librosRentados){
             if ( id == libro.getId()){
                 this.librosRentados.remove(contador);
