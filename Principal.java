@@ -7,6 +7,8 @@ public class Principal {
         ArrayList<Cliente> Clientes = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         Cliente seleccionado = null;
+        Inventario inv = new Inventario();
+        inv.agregarDatosIniciales();
 
         int opcion, opcionCliente, opcionTrabajador, idCliente;
 
@@ -57,7 +59,7 @@ public class Principal {
                         System.out.println("2. Rentar libro");
                         System.out.println("3. Devolver libro rentado");
                         System.out.println("4. Pagar cuenta"); 
-                        System.out.println("5. Slir");
+                        System.out.println("5. Salir");
                         opcionCliente=sc.nextInt();
                         sc.nextLine(); 
                         switch (opcionCliente) {
@@ -66,18 +68,16 @@ public class Principal {
                                 System.out.println("Saliendo...");
                                 break;
                             default:
-                                System.out.println("Opcion invalida...");
+                                System.out.println("Opcion invalida.");
                         }
                     } while (opcionCliente!=5);
                     
                 case 4:
-                    System.out.println("Saliendo");
+                    System.out.println("Saliendo...");
                 default:
-                    System.out.println("Opcion no valida"); 
+                    System.out.println("Opcion invalida."); 
             }
         } while (opcion != 4);
         sc.close();
     }
-
-    
 }
