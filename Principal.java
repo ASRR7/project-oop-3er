@@ -31,8 +31,8 @@ public class Principal {
                     if (Clientes.isEmpty()) 
                         System.out.println("No hay clientes registrados");
                     else {
-                        for (int i = 0; i < Clientes.size(); i++) {
-                            Clientes.get(i).mostrarInfo();
+                        for (Cliente c : Clientes) {
+                            c.mostrarInfo();
                         }
                         do {
                             System.out.println("Selecciona tu ID: ");
