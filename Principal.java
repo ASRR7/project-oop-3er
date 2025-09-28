@@ -6,7 +6,7 @@ public class Principal {
     public static void main (String[] args){
         ArrayList<Cliente> Clientes = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        int opcion;
+        int opcion, opcionCliente, opcionTrabajador, idCliente;
         String nombreCliente;
         do {
             System.out.println("---Cafe Biblioteca---");
@@ -18,11 +18,7 @@ public class Principal {
             sc.nextLine();
             switch (opcion) {
                 case 1:
-                    System.out.println("Ingresa tu nombre");
-                    nombreCliente = sc.nextLine();
-                    Cliente nuevo = new Cliente(nombreCliente);
-                    Clientes.add(nuevo);
-                    ArrayList<Cliente> Clientes = new ArrayList<>();
+                    System.out.println("Cual es tu nombre");
                     nombreCliente = sc.nextLine();
                     Cliente nuevo = new Cliente(nombreCliente);
                     Clientes.add(nuevo);
@@ -72,4 +68,6 @@ public class Principal {
         } while (opcion != 4);
         sc.close();
     }
+
+    
 }
