@@ -31,4 +31,6 @@ public class Alimento{
         return codigoBarras;
     }
 
+    public string toString(){ return "\nAlimento: "+ this.getNombre() + "\n Precio: "+this.getPrecio()+ "\n Código de barras: "+ this.getCodigoBarras()}
+
 }
