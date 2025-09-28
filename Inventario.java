@@ -29,9 +29,9 @@ public class Inventario {
         return cantidad;//Retorna cantidad de libros
     }
     
-    public void agregarLibro(String titulo, String autor, String editorial, String genero, double precio){
+    public void agregarLibro(String titulo, String autor, String editorial, String genero){
         Estante estante = this.getEstanteGenero(genero);
-        Libro libroN = new Libro(titulo, autor, editorial, genero, precio);
+        Libro libroN = new Libro(titulo, autor, editorial, genero);
         estante.insertarLibro( libroN );
     }
 
@@ -105,24 +105,48 @@ public class Inventario {
 
     public void agregarDatosIniciales(){
         this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Café Express", 18 );
-        this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Café Express", 28 );
+        this.agregarAlimento( "Rol de Canela", 45 );
+        this.agregarAlimento( "Rebanada Cheescake", 65 );
+        this.agregarAlimento( "Jugo Naranja", 40 );
+        this.agregarAlimento( "Ensalada Frutas", 60 );
+        this.agregarAlimento( "Dona Chocolate", 30 );
+        this.agregarAlimento( "Té Helado", 45 );
+        this.agregarAlimento( "Cuernito Relleno", 45 );
+
 
         this.agregarEstante("Ciencia",1);
         this.agregarEstante("Ficción", 1);
         this.agregarEstante("Romance",2);
         this.agregarEstante("Terror",2);
+        this.agregarEstante("Poesía",3);
+        this.agregarEstante("Drama",3);        
 
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Terror", 395);
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
-        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción");
+        this.agregarLibro("Breve historia del tiempo", "Stephen Hawking", "Crítica", "Ciencia");
+        this.agregarLibro("Cosmos", "Carl Sagan", "Planeta", "Ciencia");
+        this.agregarLibro("Sapiens: De animales a dioses", "Yuval Noah Harari", "Debate", "Ciencia");
+        this.agregarLibro("Dune", "Frank Herbert", "Debolsillo", "Ficción");
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción");
+        this.agregarLibro("1984", "George Orwell", "Debolsillo", "Ficción");
+        this.agregarLibro("Un mundo feliz", "Aldous Huxley", "Debolsillo", "Ficción");
+        this.agregarLibro("Fahrenheit 451", "Ray Bradbury", "Debolsillo", "Ficción");
+        this.agregarLibro("Orgullo y prejuicio", "Jane Austen", "Penguin Clásicos", "Romance");
+        this.agregarLibro("Como agua para chocolate", "Laura Esquivel", "Debolsillo", "Romance");
+        this.agregarLibro("El amor en los tiempos del cólera", "Gabriel García Márquez", "Diana", "Romance");
+        this.agregarLibro("Frankenstein", "Mary Shelley", "Penguin Clásicos", "Terror");
+        this.agregarLibro("Drácula", "Bram Stoker", "Alianza Editorial", "Terror");
+        this.agregarLibro("It (Eso)", "Stephen King", "Debolsillo", "Terror");
+        this.agregarLibro("La llamada de Cthulhu", "H.P. Lovecraft", "Alianza Editorial", "Terror");
+        this.agregarLibro("Veinte poemas de amor y una canción desesperada", "Pablo Neruda", "Seix Barral", "Poesía");
+        this.agregarLibro("Hojas de hierba", "Walt Whitman", "Alianza Editorial", "Poesía");
+        this.agregarLibro("Las flores del mal", "Charles Baudelaire", "Cátedra", "Poesía");
+        this.agregarLibro("Hamlet", "William Shakespeare", "Cátedra", "Drama");
+        this.agregarLibro( "La casa de Bernarda Alba", "Federico García Lorca", "Cátedra", "Drama");
+        this.agregarLibro("Romeo y Julieta", "William Shakespeare", "Austral", "Drama");
+
+
 
     }
 }
