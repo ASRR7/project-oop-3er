@@ -1,25 +1,36 @@
-import java.util.ArrayList; 
-import java.util.Scanner; 
+import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Principal {
-    ArrayList<Cliente> Clientes = new ArrayList<>();
-    Scanner sc = new Scanner(System.in);
-    int opcion; 
+    public static void main (String[] args){
+        ArrayList<Cliente> Clientes = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        String nombreCliente;
+        do {
+            System.out.println("---Cafe Biblioteca---");
+            System.out.println("1. Nuevo cliente");
+            System.out.println("1.");
+            System.out.println("1.");
+            System.out.println("1.");
+            System.out.println("1.");
+            System.out.println("6. Salir");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Cual es tu nombre");
+                    nombreCliente = sc.nextLine();
+                    Cliente nuevo = new Cliente(nombreCliente);
+                    Clientes.add(nuevo);
+                case 6:
+                    System.out.println("Saliendo");
+                default:
+                    System.out.println("Opcion no valida"); 
+            }
+        } while (opcion != 6);
+    }
 
-    do{
-        System.out.println("---Cafe Biblioteca---");
-        System.out.println("1.");
-        System.out.println("1.");
-        System.out.println("1.");
-        System.out.println("1.");
-        System.out.println("1.");
-        System.out.println("6. Salir");
-        switch (opcion){
-            case 1: 
-                System.out.println("Hola");
-            case 6: 
-                System.out.println("Saliendo");
-        }
-    } while (opcion != 6);
+    
 }
