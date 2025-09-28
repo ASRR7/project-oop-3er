@@ -44,12 +44,6 @@ public class Cliente{
         System.out.println("Su cuenta actual es de: "+ cuenta);
     }
 
-    public void agregarLibro(Libro nuevoLibro){
-        librosRentados.add(nuevoLibro);
-    }
-    /*
-    * To do :Agregar metodo para devolver libro a inventario
-    * */
     public void rentarLibro(Libro libroRentado, Inventario inventario){
         Estante estante = inventario.getEstanteGenero(libroRentado.getGenero());
 
@@ -63,22 +57,28 @@ public class Cliente{
 
     }
     public void devolverLibro(Libro libroRentado, Inventario inventario){
-        HashMap<String, Estante> estantes = inventario.getEstantes();
+        Estante estante = inventario.getEstanteGenero(libroRentado.getGenero());
 
-        for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
-            if ( libroRentado.getGenero().equals( estante.getValue().getGenero() ) ){
-                estante.getValue().hacerDisponible(libroRentado);
-                int contador = 0;
-                for(Libro libro: librosRentados){
-                    if (libroRentado.getId() == libro.getId()){
-                        librosRentados.remove(contador);
-                        break;
-                    }
-                    contador++;
-                }
+        for ( Libro libro : estante.getLibros() ) {
+            if ( libroRentado.getId() == libro.getId() ){
+                estante.hacerDisponible(libroRentado);
+                this.quitarLibro(libroRentado);
                 break;
             }
         }
+    }
+
+    public void quitarLibro(Libro libroRentado){
+        int contador = 0;
+        int id = libroRentado.getId()
+        for(Libro libro: librosRentados){
+            if ( id == libro.getId()){
+                this.librosRentados.remove(contador);
+                break;
+            }
+            contador++;
+        }
+        
     }
 
     public int getId() {
