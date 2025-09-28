@@ -75,6 +75,7 @@ public class Principal {
                     System.out.println("Opcion no valida"); 
             }
         } while (opcion != 4);
+        sc.close();
     }
 
     
