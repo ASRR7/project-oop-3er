@@ -14,19 +14,49 @@ public class Cliente{
         this.librosRentados = new ArrayList<>();
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Libro> getLibrosRentados() {
+        return librosRentados;
+    }
+
+    public void setLibrosRentados(ArrayList<Libro> librosRentados) {
+        this.librosRentados = librosRentados;
+    }
+
+    public double getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(double cuenta) {
+        this.cuenta = cuenta;
+    }
+
     public void mostrarInfo(){
         System.out.println("====================================");
-        System.out.println("ID: "+ id);
-        System.out.println("Nombre: "+ nombre);
-        System.out.println("Cuenta: "+ cuenta);
+        System.out.println("ID: "+ this.getId());
+        System.out.println("Nombre: "+ this.getNombre());
+        System.out.println("Cuenta: "+ this.getCuenta());
     }
 
     public void pagarCuenta(double pago){
         double cambio = 0;
+        double cuenta = this.getCuenta();
         if(pago>=cuenta){
             cambio = cuenta - pago;
             System.out.println("Cuenta pagada. ($" + cuenta + ")");
             cuenta -= pago;
+            this.setCuenta(cuenta);
             System.out.println("Cambio: $" + cambio);
         } else{
             System.out.println("Pago insuficiente");
@@ -34,8 +64,10 @@ public class Cliente{
     }
 
     public void cobrar(double cobro){
+        double cuenta = this.getCuenta();
         if (cobro>0){
             cuenta += cobro;
+            this.setCuenta(cuenta);
         } else {
             System.out.println("Cobro erroneo.");
         }
@@ -77,33 +109,5 @@ public class Cliente{
             contador++;
         }
         
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public ArrayList<Libro> getLibrosRentados() {
-        return librosRentados;
-    }
-
-    public void setLibrosRentados(ArrayList<Libro> librosRentados) {
-        this.librosRentados = librosRentados;
-    }
-
-    public double getCuenta() {
-        return cuenta;
-    }
-
-    public void setCuenta(double cuenta) {
-        this.cuenta = cuenta;
     }
 }
