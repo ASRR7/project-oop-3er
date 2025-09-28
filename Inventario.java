@@ -78,7 +78,7 @@ public class Inventario {
     public void agregarAlimento(String nombreAlimento, double precio){
         Alimento nuevoAlimento = new Alimento(nombreAlimento,precio);
         alimentos.add(nuevoAlimento);
-        System.out.println("Alimento agregado correctamente");
+        System.out.println("Alimento agregado correctamente c:");
     }
 
 
