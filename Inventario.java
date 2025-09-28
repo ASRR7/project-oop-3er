@@ -47,7 +47,7 @@ public class Inventario {
                 return estante.getValue();
             }
         }
-        return -1; //TODO: Arreglar retorno
+        return null; //TODO: Arreglar retorno
     }
 
     public HashSet<Alimento> getAlimentos(){
@@ -80,6 +80,4 @@ public class Inventario {
         alimentos.add(nuevoAlimento);
         System.out.println("Alimento agregado correctamente c:");
     }
-
-
 }
