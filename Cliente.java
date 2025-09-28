@@ -53,12 +53,30 @@ public class Cliente{
 
         for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
             if (libroRentado.getGenero().equals(estante.getGenero())){
-                Estante miEstante = estante.getValue();
+                estante.getValue().hacerIndisponible(libroRentado);
+                librosRentados.add(libroRentado);
                 break;
             }
         }
 
+    }
+    public void devolverLibro(Libro libroRentado, Inventario inventario){
+        HashMap<String, Estante> estantes = inventario.getEstantes();
 
+        for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
+            if (libroRentado.getGenero().equals(estante.getGenero())){
+                estante.getValue().hacerDisponible(libroRentado);
+                int contador = 0;
+                for(Libro libro: librosRentados){
+                    if (libroRentado.getId() == libro.getId()){
+                        librosRentados.remove(contador);
+                        break;
+                    }
+                    contador++;
+                }
+                break;
+            }
+        }
 
     }
 
