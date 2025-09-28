@@ -17,7 +17,6 @@ public class Libro {
         this.autor = autor;
         this.editorial = editorial;
         this.genero = genero;
-        this.precio = precio;
         this.ISBN = Libro.genISBN();
         this.estatus = "Disponible";
         this.enInventario = true;
@@ -43,10 +42,6 @@ public class Libro {
 
     public String getGenero() {
         return genero;
-    }
-
-    public double getPrecio() {
-        return precio;
     }
 
     public int getISBN() {
@@ -85,10 +80,6 @@ public class Libro {
         this.genero = genero;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
     public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
@@ -98,6 +89,6 @@ public class Libro {
     }
 
     public String toString() {
-        return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
+        return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
     }
 }
