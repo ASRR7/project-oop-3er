@@ -5,7 +5,6 @@ public class Libro {
     private String autor;
     private String editorial;
     private String genero;
-    private double precio;
     private int ISBN;
     private String estatus;
     private boolean enInventario;
