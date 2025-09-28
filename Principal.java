@@ -62,6 +62,7 @@ public class Principal {
                         sc.nextLine(); 
                         switch (opcionCliente) {
                             case 4:
+                                seleccionado = null; 
                                 System.out.println("Saliendo...");
                                 break;
                             default:
