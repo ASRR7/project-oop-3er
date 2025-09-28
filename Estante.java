@@ -36,6 +36,14 @@ public class Estante {
         libros.add(libro); //Añadir al final de la lista
         this.masUnoCantidadLibros();
     }
+    public bool libroEncontrado(Libro libroBuscar){
+        for(Libro libro: libros){
+            if (libro.getId() ==libroBuscar.getId){
+                return true
+            }
+        }
+        return false
+    }
     
     public int buscarISBN(String titulo){ //Retorna el libro encontrado
         for (Libro libro : this.getLibros()) {

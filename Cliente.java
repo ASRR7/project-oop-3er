@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 public class Cliente{
     public static int idContador = 0;
 
@@ -46,17 +48,18 @@ public class Cliente{
     /*
     * To do :Agregar metodo para devolver libro a inventario
     * */
-    public void devolverLibro(int ID){
-        int contador =0;
-        for(Libro libro: librosRentados){
-            if (libro.getId()== ID){
-                libro.setEstatus("Disponible");
-                librosRentados.remove(contador);
+    public void rentarLibro(Libro libroRentado, Inventario inventario){
+        HashMap<String, Estante> estantes = inventario.getEstantes();
 
-
+        for (Map.Entry<String, Estante> estante : estantes.entrySet()) {
+            if (libroRentado.getGenero().equals(estante.getGenero())){
+                Estante miEstante = estante.getValue();
+                break;
             }
-            contador ++;
         }
+
+
+
     }
 
     public int getId() {
