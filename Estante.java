@@ -38,11 +38,11 @@ public class Estante {
     }
     public boolean  libroEncontrado(Libro libroBuscar){
         for(Libro libro: libros){
-            if (libro.getId() ==libroBuscar.getId){
-                return true
+            if(libro.getId() == libroBuscar.getId()){
+                return true;
             }
         }
-        return false
+        return false;
     }
 
     public int hacerDisponible(Libro libroDisponible){
