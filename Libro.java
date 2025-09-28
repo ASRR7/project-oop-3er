@@ -5,7 +5,6 @@ public class Libro {
     private String autor;
     private String editorial;
     private String genero;
-    private double precio;
     private int ISBN;
     private String estatus;
     private boolean enInventario;
@@ -17,7 +16,6 @@ public class Libro {
         this.autor = autor;
         this.editorial = editorial;
         this.genero = genero;
-        this.precio = precio;
         this.ISBN = Libro.genISBN();
         this.estatus = "Disponible";
         this.enInventario = true;
@@ -45,10 +43,6 @@ public class Libro {
         return genero;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
     public int getISBN() {
         return ISBN;
     }
@@ -65,7 +59,7 @@ public class Libro {
         return id;
     }
 
-    //public static int getIdContador() {
+    public static int getIdContador() {
         return idContador++;
     }
 
@@ -85,14 +79,6 @@ public class Libro {
         this.genero = genero;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
-    }
-
     public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
@@ -101,11 +87,7 @@ public class Libro {
         this.enInventario = enInventario;
     }
 
-    //public void setId(int  id) {
-        this.id = id;
-    }
-
     public String toString() {
-        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
+        return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
     }
 }
