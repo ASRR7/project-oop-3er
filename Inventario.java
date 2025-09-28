@@ -29,6 +29,12 @@ public class Inventario {
         return cantidad;//Retorna cantidad de libros
     }
     
+    public void agregarLibro(String titulo, String autor, String editorial, String genero, double precio){
+        Estante estante = this.getEstanteGenero(genero);
+        Libro libroN = new Libro(titulo, autor, editorial, genero, precio);
+        estante.insertarLibro( libroN );
+    }
+
     public int consultarCantidad(String genero){
         Estante estante = this.getEstantes().get(genero);//Obtiene el estante correspondiente al genero
         return estante.getCantidadLibros();
@@ -72,14 +78,6 @@ public class Inventario {
         return false;
     }
 
-    public void agregarAlimento(Alimento alimento){
-        if( ! this.hayAlimento( alimento.getNombre() ) ){
-            this.getAlimentos().add(alimento);
-        } else {
-            System.out.println("Alimento existente en el inventario.");
-        }
-    }
-
     public void quitarAlimento(String alimentoNombre){
         Alimento alimento = this.getAlimentoNombre(alimentoNombre);
         this.getAlimentos().remove(alimento);
@@ -92,9 +90,39 @@ public class Inventario {
         }
         System.out.println("\n");
     }
+
+    public void agregarEstante(String genero, int pasillo){
+        Estante es = new Estante(genero, pasillo);
+        this.estantes.put(genero, es);
+    }
+
     public void agregarAlimento(String nombreAlimento, double precio){
-        Alimento nuevoAlimento = new Alimento(nombreAlimento,precio);
+        Alimento nuevoAlimento = new Alimento(nombreAlimento, precio);
         alimentos.add(nuevoAlimento);
-        System.out.println("Alimento agregado correctamente c:");
+        this.getAlimentos().add(nuevoAlimento);
+        System.out.println("Alimento agregado correctamente.");
+    }
+
+    public void agregarDatosIniciales(){
+        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Café Express", 18 );
+        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Coca Cola", 18 );
+        this.agregarAlimento( "Coca Cola", 18 );
+
+        this.agregarEstante("Ciencia",1);
+        this.agregarEstante("Ficción", 1);
+        this.agregarEstante("Romance",2);
+        this.agregarEstante("Terror",2);
+
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Terror", 395);
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+        this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción", 395);
+
     }
 }

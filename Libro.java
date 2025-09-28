@@ -65,7 +65,7 @@ public class Libro {
         return id;
     }
 
-    //public static int getIdContador() {
+    public static int getIdContador() {
         return idContador++;
     }
 
@@ -89,10 +89,6 @@ public class Libro {
         this.precio = precio;
     }
 
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
-    }
-
     public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
@@ -101,11 +97,7 @@ public class Libro {
         this.enInventario = enInventario;
     }
 
-    //public void setId(int  id) {
-        this.id = id;
-    }
-
     public String toString() {
-        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
+        return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", precio=" + precio + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
     }
 }
