@@ -11,6 +11,13 @@ public class Inventario {
         this.alimentos = new HashSet<Alimento>();
     }
 
+    public HashMap<String, Estante> getEstantes(){
+        return this.estantes;
+    }
+    public HashSet<Alimento> getAlimentos(){
+        return this.alimentos;
+    }
+
     public int consultarCantidad(String genero, String titulo){
         int cantidad = 0;
         Estante estante = this.getEstantes().get(genero);//Obtiene el estante correspondiente al genero
@@ -37,9 +44,6 @@ public class Inventario {
         return cantidad; //Cantidad de libros en todo el inventario
     }
 
-    public HashMap<String, Estante> getEstantes(){
-        return this.estantes;
-    }
 
     public Estante getEstanteGenero(String genero){
         for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
@@ -48,10 +52,6 @@ public class Inventario {
             }
         }
         return null;
-    }
-
-    public HashSet<Alimento> getAlimentos(){
-        return this.alimentos;
     }
 
     public Alimento getAlimentoNombre(String alimentoNombre){
