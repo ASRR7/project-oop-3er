@@ -6,7 +6,10 @@ public class Principal {
     public static void main (String[] args){
         ArrayList<Cliente> Clientes = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
+        Cliente seleccionado = null;
+
         int opcion, opcionCliente, opcionTrabajador, idCliente;
+
         String nombreCliente;
         do {
             System.out.println("---Cafe Biblioteca---");
@@ -35,14 +38,20 @@ public class Principal {
                             System.out.println("Selecciona tu ID: ");
                             idCliente = sc.nextInt();
                             sc.nextLine();
-                            if (idCliente == Clientes.get.) {
-                                System.out.println("Número de cliente inválido invalido seleciona entre 0 y " + (Computadoras.size() - 1));
+                            for (Cliente c : Clientes){
+                                if (c.getId() == idCliente); 
+                                    seleccionado = c; 
+                                    break; 
                             }
-                        } while (indice < 0 || indice >= Computadoras.size());
-                    } else
-                        
-                    
-                    System.out.println("Bienvenido cliente");
+
+
+                            if (seleccionado == null) {
+                                System.out.println("ID de cliente invalido, ingresa un ID valido"); 
+                            }
+                        } while (seleccionado==null);
+                    } 
+            
+                    System.out.println("Bienvenido cliente: " + seleccionado.getNombre());
                     do { 
                         System.out.println("1. Ordenar comida"); 
                         System.out.println("2. Rentar libro");
