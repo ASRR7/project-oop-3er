@@ -6,16 +6,14 @@ public class Principal {
     public static void main (String[] args){
         ArrayList<Cliente> Clientes = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        int opcion;
+        int opcion, opcionCliente, opcionTrabajador, idCliente;
         String nombreCliente;
         do {
             System.out.println("---Cafe Biblioteca---");
             System.out.println("1. Nuevo cliente");
-            System.out.println("1.");
-            System.out.println("1.");
-            System.out.println("1.");
-            System.out.println("1.");
-            System.out.println("6. Salir");
+            System.out.println("2. Eres un cliente");
+            System.out.println("3. Eres un trabajdor");
+            System.out.println("4. Salir");
             opcion = sc.nextInt();
             sc.nextLine();
             switch (opcion) {
@@ -24,12 +22,50 @@ public class Principal {
                     nombreCliente = sc.nextLine();
                     Cliente nuevo = new Cliente(nombreCliente);
                     Clientes.add(nuevo);
-                case 6:
+                    break; 
+                case 2: 
+                    
+                    if (Clientes.isEmpty()) 
+                        System.out.println("No hay clientes registrados");
+                    else {
+                        for (int i = 0; i < Clientes.size(); i++) {
+                            Clientes.get(i).mostrarInfo();
+                        }
+                        do {
+                            System.out.println("Selecciona tu ID: ");
+                            idCliente = sc.nextInt();
+                            sc.nextLine();
+                            if (idCliente == Clientes.get.) {
+                                System.out.println("Número de cliente inválido invalido seleciona entre 0 y " + (Computadoras.size() - 1));
+                            }
+                        } while (indice < 0 || indice >= Computadoras.size());
+                    } else
+                        
+                    
+                    System.out.println("Bienvenido cliente");
+                    do { 
+                        System.out.println("1. Ordenar comida"); 
+                        System.out.println("2. Rentar libro");
+                        System.out.println("3. Devolver libro rentado");
+                        System.out.println("4. Pagar cuenta"); 
+                        System.out.println("5. Slir");
+                        opcionCliente=sc.nextInt();
+                        sc.nextLine(); 
+                        switch (opcionCliente) {
+                            case 4:
+                                System.out.println("Saliendo...");
+                                break;
+                            default:
+                                System.out.println("Opcion invalida...");
+                        }
+                    } while (opcionCliente!=5);
+                    
+                case 4:
                     System.out.println("Saliendo");
                 default:
                     System.out.println("Opcion no valida"); 
             }
-        } while (opcion != 6);
+        } while (opcion != 4);
     }
 
     
