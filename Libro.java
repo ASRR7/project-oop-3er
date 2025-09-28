@@ -11,7 +11,7 @@ public class Libro {
     private int id;
     public static int idContador;
 
-    public Libro(String titulo, String autor, String editorial, String genero, double precio) {
+    public Libro(String titulo, String autor, String editorial, String genero) {
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
