@@ -11,6 +11,13 @@ public class Inventario {
         this.alimentos = new HashSet<Alimento>();
     }
 
+    public HashMap<String, Estante> getEstantes(){
+        return this.estantes;
+    }
+    public HashSet<Alimento> getAlimentos(){
+        return this.alimentos;
+    }
+
     public int consultarCantidad(String genero, String titulo){
         int cantidad = 0;
         Estante estante = this.getEstantes().get(genero);//Obtiene el estante correspondiente al genero
@@ -37,9 +44,6 @@ public class Inventario {
         return cantidad; //Cantidad de libros en todo el inventario
     }
 
-    public HashMap<String, Estante> getEstantes(){
-        return this.estantes;
-    }
 
     public Estante getEstanteGenero(String genero){
         for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
@@ -47,24 +51,37 @@ public class Inventario {
                 return estante.getValue();
             }
         }
-        return null; //TODO: Arreglar retorno
+        return null;
     }
 
-    public HashSet<Alimento> getAlimentos(){
-        return this.alimentos;
-    }
-
-    public Alimento hayAlimento(String alimentoNombre){
+    public Alimento getAlimentoNombre(String alimentoNombre){
         for ( Alimento alimento : this.getAlimentos() ) {
-            if( alimentoNombre.equals( alimento.getNombreAlimento() ) ){
+            if( alimentoNombre.equals( alimento.getNombre() ) ){
                 return alimento;
             }
         }
         return null;
     }
 
+    public boolean hayAlimento(String alimentoNombre){
+        for ( Alimento alimento : this.getAlimentos() ) {
+            if( alimentoNombre.equals( alimento.getNombre() ) ){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void agregarAlimento(Alimento alimento){
+        if( ! this.hayAlimento( alimento.getNombre() ) ){
+            this.getAlimentos().add(alimento);
+        } else {
+            System.out.println("Alimento existente en el inventario.");
+        }
+    }
+
     public void quitarAlimento(String alimentoNombre){
-        Alimento alimento = this.hayAlimento(alimentoNombre);
+        Alimento alimento = this.getAlimentoNombre(alimentoNombre);
         this.getAlimentos().remove(alimento);
     }
 

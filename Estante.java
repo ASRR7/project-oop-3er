@@ -45,23 +45,21 @@ public class Estante {
         return false;
     }
 
-    public int hacerDisponible(Libro libroDisponible){
+    public void hacerDisponible(Libro libroDisponible){
         for(Libro libro: libros){
             if (libroDisponible.getId()== libro.getId()) {
                 libro.setEstatus("Disponible");
-                return 0;
+                break;
             }
         }
-        return -1;
     }
-    public int hacerNoDisponible(Libro libroNoDisponible){
+    public void hacerNoDisponible(Libro libroNoDisponible){
         for(Libro libro: libros){
             if (libroNoDisponible.getId() == libro.getId()) {
                 libro.setEstatus("No disponible");
-                return 0;
+                break;
             }
         }
-        return -1;
     }
 
 

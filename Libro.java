@@ -65,7 +65,7 @@ public class Libro {
         return id;
     }
 
-    public static int getIdContador() {
+    //public static int getIdContador() {
         return idContador++;
     }
 
@@ -101,7 +101,7 @@ public class Libro {
         this.enInventario = enInventario;
     }
 
-    public void setId(int id) {
+    //public void setId(int  id) {
         this.id = id;
     }
 
