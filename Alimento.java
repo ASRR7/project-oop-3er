@@ -1,11 +1,11 @@
 public class Alimento{
-    private String nombreAlimento;
+    private String nombre;
     private double precio;
     private int codigoBarras;
     private static int codigoBarrasInicial = 576235420;
 
-    public Alimento(String nombreAlimento, double precio){
-        this.nombreAlimento = nombreAlimento;
+    public Alimento(String nombre, double precio){
+        this.nombre = nombre;
         this.precio = precio;
         this.codigoBarras = codigoBarrasInicial;
         codigoBarrasInicial++;
@@ -19,17 +19,16 @@ public class Alimento{
         this.precio = precio;
     }
 
-    public String getNombreAlimento() {
-        return nombreAlimento;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreAlimento(String nombreAlimento) {
-        this.nombreAlimento = nombreAlimento;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getCodigoBarras() {
         return codigoBarras;
     }
-
 
 }
