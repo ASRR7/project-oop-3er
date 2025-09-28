@@ -17,19 +17,30 @@ public class Cliente{
     }
 
     public void mostrarInfo(){
+        System.out.println("====================================");
         System.out.println("ID: "+ id);
-        
+        System.out.println("Nombre: "+ nombre);
         System.out.println("Cuenta: "+ cuenta);
-
     }
 
     public void pagarCuenta(double pago){
-        cuenta -= pago;
-        System.out.println("Su cuenta actual es de: "+ cuenta);
+        double cambio = 0;
+        if(pago>=cuenta){
+            cambio = cuenta - pago;
+            System.out.println("Cuenta pagada. ($" + cuenta + ")");
+            cuenta -= pago;
+            System.out.println("Cambio: $" + cambio);
+        } else{
+            System.out.println("Pago insuficiente");
+        }
     }
 
     public void cobrar(double cobro){
-        cuenta += cobro;
+        if (cobro>0){
+            cuenta += cobro;
+        } else {
+            System.out.println("Cobro erroneo.");
+        }
         System.out.println("Su cuenta actual es de: "+ cuenta);
     }
 
@@ -68,7 +79,6 @@ public class Cliente{
                 break;
             }
         }
-
     }
 
     public int getId() {
