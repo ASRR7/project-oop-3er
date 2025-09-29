@@ -130,6 +130,28 @@ public class Inventario {
         System.out.println("Alimento agregado correctamente.");
     }
 
+    public int printGeneros(){
+        System.out.println("========================\nGeneros");
+        int c = 0;
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            c++;
+            System.out.println(c+". "+ estante.getValue().getGenero());
+        }
+        System.out.println("------------------------------------------");
+        return c;
+    }
+
+    public String numToGenero(int numGenero){
+        int c = 1;
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            if(c == numGenero){
+                return estante.getValue().getGenero();
+            }
+            c++;
+        }
+        return "Mixto";
+    }
+
     public void agregarDatosIniciales(){
         this.agregarAlimento( "Coca Cola", 18 );
         this.agregarAlimento( "Cafe Express", 28 );
