@@ -39,6 +39,17 @@ public class Inventario {
         } 
         return cantidad;//Retorna cantidad de libros
     }
+/**
+ * <h2>
+ *     Metodo getLibro
+ * </h2>
+ * Dado el título de un libro, se busca en cada uno de los estantes (usando getEstantes)
+ *
+ * @param titulo el título del libro a buscar
+ * @return libro en caso de encontrarse; de lo contrario regresa null
+ * @author Equipo 12+1
+ * @version 1.0
+ * */
 
     public Libro getLibro(String titulo){
         Libro libro;
@@ -51,11 +62,15 @@ public class Inventario {
         return null;
     }
 
-    public Libro getLibro(int isbn, String genero){
-        Estante estante = this.getEstantes().get(genero);
-        return estante.getLibro(isbn);
 
-    }
+    /**
+     * <h2>Metodo getLibro</h2>
+     * Dado un ID de un libro, devuelve el libro a buscar
+     * @param id del libro a buscar
+     * @return libro correspondiente; de no encontrarse regresa null
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public Libro getLibro(int id){
         Libro libro;
         for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
@@ -66,6 +81,8 @@ public class Inventario {
         }
         return null;
     }
+
+
     
     public void agregarLibro(String titulo, String autor, String editorial, String genero){
         Estante estante = this.getEstantes().get(genero);
