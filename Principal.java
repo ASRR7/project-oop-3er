@@ -89,7 +89,7 @@ public class Principal {
                                     break; 
                                 case 2: 
                                     inventario.mostrarEstantes(); 
-                                    System.out.print("La busqueda la realizaras por: \n1. Nombre del libro\n2. ISBN y género\n3. ID\n4. Ya no deseo rentar un libro\nOpcion: ");
+                                    System.out.print("La busqueda la realizaras por: \n1. Nombre del libro\n2. ID\n3. Ya no deseo rentar un libro\nOpcion: ");
                                     opcionBusqueda = sc.nextInt();
                                     sc.nextLine();
                                     switch (opcionBusqueda) {
@@ -99,25 +99,17 @@ public class Principal {
                                             seleccionLibro = inventario.getLibro(rentaLibro); 
                                             break; 
                                         case 2: 
-                                            System.out.print("Ingresa exactamente el ISBN del libro: ");
-                                            isbn = sc.nextInt(); 
-                                            sc.nextLine(); 
-                                            System.out.print("Ingresa el genero: ");
-                                            genero = sc.nextLine(); 
-                                            seleccionLibro = inventario.getLibro(isbn, genero);
-                                            break;
-                                        case 3: 
                                             System.out.print("Ingresa el ID del libro: ");
                                             idLibro = sc.nextInt();
                                             sc.nextLine();
                                             seleccionLibro = inventario.getLibro(idLibro); 
                                             break;
-                                        case 4:    
+                                        case 3:    
                                             System.out.println("No rentaste nada..."); 
                                         default:
                                             System.out.println("Opcion invalida...");
                                     }
-                                    if (opcionBusqueda!=4){
+                                    if (opcionBusqueda!=3){
                                         if (seleccionLibro == null)
                                             System.out.println("No tenemos ese libro...");
                                         else
