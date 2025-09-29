@@ -23,6 +23,7 @@ public class Alimento{
     }
     /**
      * <h2>Metodo getPrecio</h2>
+     * <p>
      * Devuelve el precio del alimento.
      * @return precio del alimento
      */
@@ -32,6 +33,7 @@ public class Alimento{
     
     /**
      * <h2>Metodo setPrecio</h2>
+     * <p>
      * Hace autoreferencia al precio del alimento para modificarlo. 
      * @param precio nuevo del alimento
      */
@@ -40,6 +42,7 @@ public class Alimento{
     }
     /**
      * <h2>Metodo getNombre</h2>
+     * <p>
      * Devuelve el nombre del alimento.
      * @return nombre del alimento
      */
@@ -48,6 +51,7 @@ public class Alimento{
     }
     /**
      * <h2>Metodo setNombre</h2>
+     * <p>
      * Hace autoreferencia al nombre del alimento para modificarlo.
      * @param nuevo nombre del alimento
      */
@@ -56,6 +60,7 @@ public class Alimento{
     }
     /**
      * <h2>Metodo getCodigoBarras</h2>
+     * <p>
      * Devuelve el código de barras del alimento.
      * @return código de barras del alimento.
      */
