@@ -148,6 +148,7 @@ public class Inventario {
         this.agregarEstante("Terror",2);
         this.agregarEstante("Poesía",3);
         this.agregarEstante("Drama",3);        
+        this.agregarEstante("Mixto", 4);
 
 
         this.agregarLibro("100 años de soledad", "Gabriel García", "Editorial Diana", "Ficción");

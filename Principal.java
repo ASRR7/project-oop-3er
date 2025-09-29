@@ -20,9 +20,9 @@ public class Principal {
         Libro seleccionLibro = null; 
         Estante seleccionEstante=null; 
 
-        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, idLibro, isbn, idCliente;
-        double pago; 
-        String nombreCliente, orden, rentaLibro, genero;
+        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, opcionTAgregarQuitar, idLibro, isbn, idCliente, pasillo;
+        double pago, precio; 
+        String nombreCliente, orden, rentaLibro, genero, nombreAlimento, generoEstante, nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro;
 
         do {
             System.out.println("---Cafe Biblioteca---");
@@ -121,20 +121,24 @@ public class Principal {
                                         if (seleccionLibro == null)
                                             System.out.println("No tenemos ese libro...");
                                         else
-                                            seleccionado.rentarLibro(seleccionLibro, inventario);
-                                            System.out.println("El libro: "+seleccionLibro.toString()+" ha sido rentado");
+                                            if (seleccionLibro.getEstatus() == "Disponible"){
+                                                seleccionado.rentarLibro(seleccionLibro, inventario);
+                                                System.out.println("El libro: " + seleccionLibro.toString() + " ha sido rentado");
+                                            }
+                                            else 
+                                                System.out.println("El libro ya fue rentado");     
                                     }
                                     break;
                                 case 3: 
                                     break;
                                 case 4: 
                                     do { 
-                                        seleccionado.cobrar(0);
+                                        System.out.println("Su cuenta actual es de: $" + seleccionado.getCuenta());
                                         System.out.print("Ingresa tu pago: $");
                                         pago = sc.nextDouble(); 
                                         sc.nextLine(); 
                                         seleccionado.pagarCuenta(pago);
-                                    } while (seleccionado.getCuenta()>=0);
+                                    } while (seleccionado.getCuenta()>0);
                                     break; 
                                 case 5:
                                     seleccionado = null;
@@ -155,17 +159,86 @@ public class Principal {
                     do { 
                         System.out.println("1. Agregar/quitar comida");
                         System.out.println("2. Agregar/quitar libros");
-                        System.out.println("3. Agregar/quitar estantes");
+                        System.out.println("3. Agregar estante de libros");
                         System.out.println("4. Salir");
                         System.out.print("Opcion trabajador: ");
                         opcionTrabajador = sc.nextInt();
                         sc.nextLine();
                         switch (opcionTrabajador) {
                             case 1://Agregar/quitar comida
+                                System.out.println("1. Agregar comida");
+                                System.out.println("2. Quitar comida");
+                                System.out.println("3. Salir");
+                                opcionTAgregarQuitar=sc.nextInt(); 
+                                sc.nextLine(); 
+                                switch (opcionTAgregarQuitar){
+                                    case 1: 
+                                        System.out.print("Cuál es el nombre del nuevo alimento: ");
+                                        nombreAlimento=sc.nextLine(); 
+                                        System.out.print("Cual es el precio del nuevo alimento: "); 
+                                        precio=sc.nextInt(); 
+                                        sc.nextLine(); 
+                                        inventario.agregarAlimento(nombreAlimento, precio);
+                                        seleccionAlimento = inventario.getAlimentoNombre(nombreAlimento);
+                                        if (seleccionAlimento != null) 
+                                            System.out.println("Se agrego el alimento: " + seleccionAlimento.getNombre() + " que tiene un precio de: " + seleccionAlimento.getPrecio());
+                                        break; 
+                                    case 2: 
+                                        inventario.mostrarAlimentos();
+                                        System.out.print("Cual es el nombre del alimento que se va a retirar: ");
+                                        nombreAlimento = sc.nextLine();
+                                        inventario.quitarAlimento(nombreAlimento);
+                                        break; 
+                                    case 3: 
+                                        System.out.println("Saliendo...");
+                                        break;
+                                    default:
+                                        System.out.println("Opcion invalida.");
+                                }
+                                
                                 break;
                             case 2://Agregar/quitar libros
+                                System.out.println("1. Agregar libro");
+                                System.out.println("2. Quitar libro");
+                                System.out.println("3. Salir");
+                                opcionTAgregarQuitar = sc.nextInt();
+                                sc.nextLine();
+                                switch (opcionTAgregarQuitar) {
+                                    case 1:
+                                        System.out.print("Cuál es el nombre del nuevo libro: "); //titulo, autor, editorial, genero 
+                                        nombreNuevoLibro = sc.nextLine();
+                                        autorNuevoLibro = sc.nextLine();
+                                        editorialNuevoLibro = sc.nextLine();
+                                        generoNuevoLibro = sc.nextLine();
+
+                                        
+                                        inventario.agregarLibro(nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro); 
+                                        seleccionLibro = inventario.getLibro(rentaLibro);
+
+                                        if (seleccionAlimento != null) {
+                                            System.out.println("El libro: " + seleccionLibro.toString() + " se agrego exitosamente");
+                                        }
+                                        break;
+                                    case 2:
+                                        inventario.mostrarAlimentos();
+                                        System.out.print("Cual es el nombre del alimento que se va a retirar: ");
+                                        nombreAlimento = sc.nextLine();
+                                        inventario.quitarAlimento(nombreAlimento);
+                                        break;
+                                    case 3:
+                                        System.out.println("Saliendo...");
+                                        break;
+                                    default:
+                                        System.out.println("Opcion invalida.");
+                                }
                                 break;
-                            case 3://Agregar/quitar estantes
+                            case 3://Agregar estantes
+                                System.out.print("Que genero de libros tendra el estante: ");
+                                generoEstante=sc.nextLine(); 
+                                System.out.print("En que pasillo se ubicara el nuevo estante: "); 
+                                pasillo=sc.nextInt();
+                                sc.nextLine(); 
+                                inventario.agregarEstante(generoEstante, pasillo);
                                 break;
                             case 4:
                                 seleccionado = null;
