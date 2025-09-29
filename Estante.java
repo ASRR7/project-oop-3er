@@ -16,6 +16,8 @@ public class Estante {
      *
      * @param genero género de los libros que almacenará el estante
      * @param pasillo pasillo en el que se encuentra el estante
+     * @author Equipo 13
+     * @version 1.0
      */
     Estante(String genero, int pasillo){
         this.cantidadLibros = 0;
@@ -43,6 +45,8 @@ public class Estante {
      * </p>
      *
      * @return prcantidadLibros en el estante
+     * @author Equipo 13
+     * @version 1.0
      */
 
     public int getCantidadLibros(){
@@ -55,6 +59,8 @@ public class Estante {
      * </p>
      *
      * @return genero del estante
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getGenero(){
         return this.genero;
@@ -66,6 +72,8 @@ public class Estante {
      * </p>
      *
      * @return libros en un arreglo
+     * @author Equipo 13
+     * @version 1.0
      */
     public ArrayList<Libro> getLibros(){
         return this.libros;
@@ -77,6 +85,8 @@ public class Estante {
      * </p>
      *
      * @return pasillo del estante
+     * @author Equipo 13
+     * @version 1.0
      */
     public int getPasillo(){
         return this.pasillo;
