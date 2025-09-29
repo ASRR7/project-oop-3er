@@ -55,8 +55,7 @@ public class Cliente{
         if(pago>=cuenta){
             cambio = cuenta - pago;
             System.out.println("Cuenta pagada. ($" + cuenta + ")");
-            cuenta -= pago;
-            this.setCuenta(cuenta);
+            this.setCuenta(0);
             System.out.println("Cambio: $" + cambio);
         } else{
             System.out.println("Pago insuficiente");
