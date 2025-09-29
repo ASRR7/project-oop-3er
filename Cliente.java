@@ -71,7 +71,7 @@ public class Cliente{
         } else {
             System.out.println("Cobro erroneo.");
         }
-        System.out.println("Su cuenta actual es de: "+ cuenta);
+        System.out.println("Su cuenta actual es de: $"+ cuenta);
     }
 
     public void rentarLibro(Libro libroRentado, Inventario inventario){
