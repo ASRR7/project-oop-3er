@@ -75,7 +75,7 @@ public class Cliente{
     }
 
     public void rentarLibro(Libro libroRentado, Inventario inventario){
-        Estante estante = inventario.getEstanteGenero(libroRentado.getGenero());
+        Estante estante = inventario.getEstantes().get(libroRentado.getGenero());
 
         for ( Libro libro : estante.getLibros() ) {
             if ( libroRentado.getISBN() == libro.getISBN() ){
@@ -87,7 +87,7 @@ public class Cliente{
 
     }
     public void devolverLibro(Libro libroRentado, Inventario inventario){
-        Estante estante = inventario.getEstanteGenero(libroRentado.getGenero());
+        Estante estante = inventario.getEstantes().get(libroRentado.getGenero());
 
         for ( Libro libro : estante.getLibros() ) {
             if ( libroRentado.getId() == libro.getId() ){
