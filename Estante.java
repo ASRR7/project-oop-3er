@@ -36,7 +36,43 @@ public class Estante {
         libros.add(libro); //Añadir al final de la lista
         this.masUnoCantidadLibros();
     }
-    public boolean  libroEncontrado(Libro libroBuscar){
+
+    public Libro getLibro(Libro libroBuscar){
+        for(Libro libro: this.getLibros()){
+            if(libro.getId() == libroBuscar.getId()){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Libro getLibro(String titulo){
+        for(Libro libro: this.getLibros()){
+            if(titulo.equals( libro.getTitulo() )){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Libro getLibro(int isbn, String genero){
+        for(Libro libro: this.getLibros()){
+            if(libro.getISBN() == isbn){
+                return libro;
+            }
+        }
+        return null;
+    }
+    public Libro getLibro(int id){
+        for(Libro libro: this.getLibros()){
+            if(libro.getId() == id){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public boolean libroEncontrado(Libro libroBuscar){
         for(Libro libro: libros){
             if(libro.getId() == libroBuscar.getId()){
                 return true;
@@ -70,5 +106,15 @@ public class Estante {
             }
         }
         return -1;
+    }
+
+    public void print(){
+        System.out.println("---------------------------------------");
+        System.out.println("Estante: " +this.getGenero() + " | Pasillo: " + this.getPasillo());
+        System.out.println("Libros\n===========================================");
+        for (Libro libro : this.getLibros()) {
+            System.out.println(libro.toString());
+        }
+        System.out.println("---------------------------------------");
     }
 }

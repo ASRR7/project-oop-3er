@@ -28,9 +28,36 @@ public class Inventario {
         } 
         return cantidad;//Retorna cantidad de libros
     }
+
+    public Libro getLibro(String titulo){
+        Libro libro;
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            libro = estante.getValue().getLibro(titulo);
+            if(libro != null){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Libro getLibro(int isbn, String genero){
+        Estante estante = this.getEstantes().get(genero);
+        return estante.getLibro(isbn);
+
+    }
+    public Libro getLibro(int id){
+        Libro libro;
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            libro = estante.getValue().getLibro(id);
+            if(libro != null){
+                return libro;
+            }
+        }
+        return null;
+    }
     
     public void agregarLibro(String titulo, String autor, String editorial, String genero){
-        Estante estante = this.getEstanteGenero(genero);
+        Estante estante = this.getEstantes().get(genero);
         Libro libroN = new Libro(titulo, autor, editorial, genero);
         estante.insertarLibro( libroN );
     }
@@ -48,16 +75,6 @@ public class Inventario {
             cantidad += this.consultarCantidad( estantePar.getValue().getGenero(), titulo );
         }
         return cantidad; //Cantidad de libros en todo el inventario
-    }
-
-
-    public Estante getEstanteGenero(String genero){
-        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
-            if ( genero.equals( estante.getValue().getGenero() ) ) {
-                return estante.getValue();
-            }
-        }
-        return null;
     }
 
     public Alimento getAlimentoNombre(String alimentoNombre){
@@ -89,6 +106,16 @@ public class Inventario {
             System.out.println(alimento.getNombre() + " -  $" + alimento.getPrecio());
         }
         System.out.println("----------------------------------------------\n");
+    }
+
+    public void mostrarEstantes(){
+        for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
+            estante.getValue().print();
+        }
+    }
+    public void mostrarEstantes(String genero){
+        Estante estante = this.getEstantes().get(genero);
+        estante.print();
     }
 
     public void agregarEstante(String genero, int pasillo){
