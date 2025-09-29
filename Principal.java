@@ -20,7 +20,8 @@ public class Principal {
         Libro seleccionLibro = null; 
         Estante seleccionEstante=null; 
 
-        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, idLibro, isbn, idCliente, pago;
+        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, idLibro, isbn, idCliente;
+        double pago; 
         String nombreCliente, orden, rentaLibro, genero;
 
         do {
@@ -88,10 +89,10 @@ public class Principal {
                                     break; 
                                 case 2: 
                                     inventario.mostrarEstantes(); 
-                                    System.out.println("La busqueda la realizaras por: \n1. Nombre del libro\n2. ISBN y género\n3. ID\n4. Ya no deseo rentar un libro\nOpcion: ");
+                                    System.out.print("La busqueda la realizaras por: \n1. Nombre del libro\n2. ISBN y género\n3. ID\n4. Ya no deseo rentar un libro\nOpcion: ");
                                     opcionBusqueda = sc.nextInt();
                                     sc.nextLine();
-                                    switch (opcionCliente) {
+                                    switch (opcionBusqueda) {
                                         case 1: 
                                             System.out.print("Ingresa el nombre del libro que deseas rentar, el nombre debe de ser idéntico: ");
                                             rentaLibro = sc.nextLine();
@@ -121,6 +122,7 @@ public class Principal {
                                             System.out.println("No tenemos ese libro...");
                                         else
                                             seleccionado.rentarLibro(seleccionLibro, inventario);
+                                            System.out.println("El libro: "+seleccionLibro.toString()+" ha sido rentado");
                                     }
                                     break;
                                 case 3: 
@@ -128,11 +130,11 @@ public class Principal {
                                 case 4: 
                                     do { 
                                         seleccionado.cobrar(0);
-                                        System.out.print("Ingresa tu pago: ");
-                                        pago = sc.nextInt(); 
+                                        System.out.print("Ingresa tu pago: $");
+                                        pago = sc.nextDouble(); 
                                         sc.nextLine(); 
                                         seleccionado.pagarCuenta(pago);
-                                    } while (seleccionado.getCuenta()<=0);
+                                    } while (seleccionado.getCuenta()>=0);
                                     break; 
                                 case 5:
                                     seleccionado = null;
