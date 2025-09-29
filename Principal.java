@@ -207,12 +207,20 @@ public class Principal {
                                     case 1:
                                         System.out.print("Cuál es el nombre del nuevo libro: "); //titulo, autor, editorial, genero 
                                         nombreNuevoLibro = sc.nextLine();
+                                        System.out.print("Cuál es el autor del nuevo libro: ");
                                         autorNuevoLibro = sc.nextLine();
+                                        System.out.print("Cuál es la editorial del nuevo libro: ");
                                         editorialNuevoLibro = sc.nextLine();
+                                        System.out.print("Cuál es el genero del nuevo libro: ");
                                         generoNuevoLibro = sc.nextLine();
+                                        for (Estante e : inventario.estantes) {
+                                            if (e.getGenero() == generoNuevoLibro) {
+                                                inventario.agregarLibro(nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro);
+                                                break;
+                                            }
+                                        }
 
                                         
-                                        inventario.agregarLibro(nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro); 
                                         seleccionLibro = inventario.getLibro(rentaLibro);
 
                                         if (seleccionAlimento != null) {
