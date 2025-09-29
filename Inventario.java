@@ -21,12 +21,12 @@ public class Inventario {
     /**
      * <h2> Metodo consultar cantidad</h2>
      * Usa el metodo getEstantes() para obtener el estante según el genero
-     * De auerdo a eso, itera sobre el estante buscando un libro que conincida en título
+     * De acuerdo a eso, itera sobre el estante buscando un libro que conincida en título
      *
      * @param genero el género (String) a buscar para el estante
      * @param titulo el título (String) a buscar para el libro
      * @return el conteo total de libros
-     * @author Equipo 12+1
+     * @author Equipo 13
      * @version 1.0
      * */
     public int consultarCantidad(String genero, String titulo){
