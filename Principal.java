@@ -130,6 +130,19 @@ public class Principal {
                                     }
                                     break;
                                 case 3: 
+                                    seleccionLibro = null;
+                                    seleccionado.printLibrosRentados();
+                                    System.out.print("Ingresa el ID del libro que deseas devolver: ");
+                                    idLibro = sc.nextInt();
+                                    sc.nextLine();
+                                    seleccionLibro = inventario.getLibro(idLibro); 
+
+                                    if( seleccionado.loTengoRentado( seleccionLibro ) ){
+                                        seleccionado.devolverLibro(seleccionLibro, inventario);
+                                        System.out.println("Libro devuelto con exito.");
+                                    }else {
+                                        System.out.println("Ese libro no lo tienes.");
+                                    }
                                     break;
                                 case 4: 
                                     do { 
