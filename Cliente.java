@@ -85,6 +85,7 @@ public class Cliente{
         }
 
     }
+
     public void devolverLibro(Libro libroRentado, Inventario inventario){
         Estante estante = inventario.getEstantes().get(libroRentado.getGenero());
 
@@ -94,6 +95,13 @@ public class Cliente{
                 this.quitarLibro(libroRentado);
                 break;
             }
+        }
+    }
+
+    public void printLibrosRentados(){
+        System.out.println("============================\nLibros rentados:");
+        for(Libro libro: this.getLibrosRentados()){
+            System.out.println(libro.toString());
         }
     }
 
