@@ -86,7 +86,16 @@ public class Libro {
     public void setEnInventario(boolean enInventario) {
         this.enInventario = enInventario;
     }
-
+    /**
+     * <h2> Metodo toString </h2>
+     * <p>
+     * Imprime el libro: título, autor, editorial, genero, sibn, estatus, en Inventario e ID    *
+     * @author Equipo 13
+     * @version 1.0
+     * @return Cadena de texto con todos los atributos mencionados. 
+     * @see Libro
+     *
+     */
     public String toString() {
         return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';
     }
