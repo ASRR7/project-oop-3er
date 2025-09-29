@@ -98,13 +98,7 @@ public class Cliente{
         }
     }
 
-    public void printLibrosRentados(){
-        System.out.println("============================\nLibros rentados:");
-        for(Libro libro: this.getLibrosRentados()){
-            System.out.println(libro.toString());
-        }
-    }
-
+    
     public void quitarLibro(Libro libroRentado){
         int contador = 0;
         int id = libroRentado.getId();
@@ -116,5 +110,12 @@ public class Cliente{
             contador++;
         }
         
+    }
+    
+    public void printLibrosRentados(){
+        System.out.println("============================\nLibros rentados:");
+        for(Libro libro: this.getLibrosRentados()){
+            System.out.println(libro.toString());
+        }
     }
 }
