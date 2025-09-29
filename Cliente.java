@@ -14,6 +14,8 @@ public class Cliente{
      * </p>
      *
      * @param nombre es el nombre del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
     Cliente(String nombre){
         idContador++;
@@ -28,6 +30,8 @@ public class Cliente{
      * </p>
      *
      * @return id del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
 
     public int getId() {
@@ -40,6 +44,8 @@ public class Cliente{
      * </p>
      *
      * @return nombre del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getNombre() {
         return nombre;
@@ -51,6 +57,8 @@ public class Cliente{
      * </p>
      *
      * @param nombre nuevo del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
 
     public void setNombre(String nombre) {
@@ -63,6 +71,8 @@ public class Cliente{
      * </p>
      *
      * @return librosRentados son los libros que el cliente ha rentado
+     * @author Equipo 13
+     * @version 1.0
      */
     public ArrayList<Libro> getLibrosRentados() {
         return librosRentados;
@@ -74,6 +84,8 @@ public class Cliente{
      * </p>
      *
      * @param librosRentados son los libros que el cliente ha rentado
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setLibrosRentados(ArrayList<Libro> librosRentados) {
         this.librosRentados = librosRentados;
@@ -85,6 +97,8 @@ public class Cliente{
      * </p>
      *
      * @return cuenta del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
 
     public double getCuenta() {
@@ -97,6 +111,8 @@ public class Cliente{
      * </p>
      *
      * @param cuenta nuevo del cliente
+     * @author Equipo 13
+     * @version 1.0
      */
 
     public void setCuenta(double cuenta) {
