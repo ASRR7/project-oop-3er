@@ -84,11 +84,11 @@ public class Inventario {
     }
 
     public void mostrarAlimentos(){
-        System.out.println("Alimentos en inventario: ");
+        System.out.println("==========================\nAlimentos en inventario: ");
         for ( Alimento alimento : this.getAlimentos() ) {
-            System.out.print(alimento + ", ");
+            System.out.println(alimento.getNombre() + " -  $" + alimento.getPrecio());
         }
-        System.out.println("\n");
+        System.out.println("----------------------------------------------\n");
     }
 
     public void agregarEstante(String genero, int pasillo){
