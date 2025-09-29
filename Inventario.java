@@ -132,13 +132,13 @@ public class Inventario {
 
     public void agregarDatosIniciales(){
         this.agregarAlimento( "Coca Cola", 18 );
-        this.agregarAlimento( "Café Express", 28 );
+        this.agregarAlimento( "Cafe Express", 28 );
         this.agregarAlimento( "Rol de Canela", 45 );
         this.agregarAlimento( "Rebanada Cheescake", 65 );
         this.agregarAlimento( "Jugo Naranja", 40 );
         this.agregarAlimento( "Ensalada Frutas", 60 );
         this.agregarAlimento( "Dona Chocolate", 30 );
-        this.agregarAlimento( "Té Helado", 45 );
+        this.agregarAlimento( "Te Helado", 45 );
         this.agregarAlimento( "Cuernito Relleno", 45 );
 
 
