@@ -1,5 +1,12 @@
+package proyecto;
 import java.util.ArrayList;
 
+/**
+ * <h2>Clase Cliente</h2>
+ * 
+ * @author Equipo 13
+ * @version 1.0
+ */
 public class Cliente{
     public static int idContador = 0;
     private int id;

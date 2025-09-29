@@ -1,5 +1,12 @@
+package proyecto;
 import java.util.ArrayList;
 
+/**
+ * <h2>Clase Estante</h2>
+ * 
+ * @author Equipo 13
+ * @version 1.0
+ */
 public class Estante {
     private int cantidadLibros;
     private String genero;

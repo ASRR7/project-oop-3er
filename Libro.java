@@ -1,5 +1,12 @@
+package proyecto;
 import java.util.Random;
 
+/**
+ * <h2>Clase Libro</h2>
+ * 
+ * @author Equipo 13
+ * @version 1.0
+ */
 public class Libro {
     private String titulo;
     private String autor;

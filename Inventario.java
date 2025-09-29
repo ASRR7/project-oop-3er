@@ -1,7 +1,15 @@
+package proyecto;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+/**
+ * <h2>Clase Inventario</h2>
+ * 
+ * @author Equipo 13
+ * @version 1.0
+ */
 public class Inventario {
     private HashMap<String, Estante> estantes;
     private HashSet<Alimento> alimentos;

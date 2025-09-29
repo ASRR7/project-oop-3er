@@ -1,3 +1,10 @@
+package proyecto;
+/**
+ * <h2>Clase Alimento</h2>
+ * 
+ * @author Equipo 13
+ * @version 1.0
+ */
 public class Alimento{
     private String nombre;
     private double precio;
