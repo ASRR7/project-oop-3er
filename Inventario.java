@@ -6,14 +6,38 @@ public class Inventario {
     private HashMap<String, Estante> estantes;
     private HashSet<Alimento> alimentos;
 
+    /**
+     * <h2> Constructor Inventario</h2>
+     * Inicializa el hashMap y el HashSet.
+     *
+     * @return Inventario
+     * @author Equipo 13
+     * @version 1.0
+     * */
     Inventario(){
         this.estantes = new HashMap<String, Estante>();
         this.alimentos = new HashSet<Alimento>();
     }
 
+    /**
+     * <h2> Metodo getAlimentos</h2>
+     * Retorna el HashMap estantes
+     *
+     * @return HashMap String,Estante
+     * @author Equipo 13
+     * @version 1.0
+     * */
     public HashMap<String, Estante> getEstantes(){
         return this.estantes;
     }
+    /**
+     * <h2> Metodo getAlimentos</h2>
+     * Retorna el HashSet alimentos
+     *
+     * @return HashSet de Alimento
+     * @author Equipo 13
+     * @version 1.0
+     * */
     public HashSet<Alimento> getAlimentos(){
         return this.alimentos;
     }
@@ -68,7 +92,7 @@ public class Inventario {
      * Dado un ID de un libro, devuelve el libro a buscar
      * @param id del libro a buscar
      * @return libro correspondiente; de no encontrarse regresa null
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public Libro getLibro(int id){
@@ -91,7 +115,7 @@ public class Inventario {
      * @param autor del libro
      * @param editorial del libro
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void agregarLibro(String titulo, String autor, String editorial, String genero){
@@ -105,7 +129,7 @@ public class Inventario {
      * Dado un género, consulta la cantidad de libros en el estante correspondiente a dicho género
      * @param genero del estante
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public int consultarCantidad(String genero){
@@ -118,7 +142,7 @@ public class Inventario {
      * cada estante dentro del mapa de estantes
      * @param titulo del libro a buscar
      * @return cantidad de libros con el título correspondiente
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public int consultarCantidadTitulo(String titulo){
@@ -136,7 +160,7 @@ public class Inventario {
      * en la lista de alimentos; de lo contrario se regresa null
      * @param alimentoNombre , nombre del alimentoa buscar
      * @return alimento con el nombre correspondiente, null si no se encuentra
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public Alimento getAlimentoNombre(String alimentoNombre){
@@ -153,7 +177,7 @@ public class Inventario {
      * si se encuentra o no
      * @param alimentoNombre , nombre del alimento a buscar
      * @return true si el alimento con el nombre indicado se encuentra; false de lo contrario
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public boolean hayAlimento(String alimentoNombre){
@@ -169,7 +193,7 @@ public class Inventario {
      * Dado el nombre de un alimento, elimina el objeto alimento con el nombre correspondiente
      * @param alimentoNombre , nombre del alimento a eliminar
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void quitarAlimento(String alimentoNombre){
@@ -180,7 +204,7 @@ public class Inventario {
      * <h2>Metodo mostrarAlimentos</h2>
      * Muestra todos los alimentos en la lista de alimentos actuales
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void mostrarAlimentos(){
@@ -194,7 +218,7 @@ public class Inventario {
      * <h2>Metodo mostrarEstantes</h2>
      * Imprime cada uno de los estantes encontrados
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void mostrarEstantes(){
@@ -207,7 +231,7 @@ public class Inventario {
      * Dado un género especificado, imprime el estante con el género correspondiente
      * @param genero del estante a buscar
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void mostrarEstantes(String genero){
@@ -221,7 +245,7 @@ public class Inventario {
      * @param genero del estante a añadir
      * @param pasillo del estante a añadir
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void agregarEstante(String genero, int pasillo){
@@ -235,7 +259,7 @@ public class Inventario {
      * @param nombreAlimento nombre del alimento a agregar
      * @param precio del alimento a agregar
      * @return void
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void agregarAlimento(String nombreAlimento, double precio){
@@ -249,7 +273,7 @@ public class Inventario {
      * <h2>Metodo printGeneros</h2>
      * Imprime cada uno de los géneros de los estantes
      * @return el número de estantes
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public int printGeneros(){
@@ -268,7 +292,7 @@ public class Inventario {
      * Este se usa en el menú para seleccionar el género por medio de un menú.
      * @param numGenero número del género seleccionado por el usuario
      * @return el género seleccionado
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public String numToGenero(int numGenero){
@@ -284,7 +308,7 @@ public class Inventario {
     /**
      * <h2>Metodo agregarDatosIniciales</h2>
      * Agrega estantes, alimentos y libros de muestra para usarse
-     * @author Equipo 12 + 1
+     * @author Equipo 13
      * @version 1.0
      * */
     public void agregarDatosIniciales(){
