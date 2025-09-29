@@ -20,8 +20,8 @@ public class Principal {
         Libro seleccionLibro = null; 
         Estante seleccionEstante=null; 
 
-        int opcion, opcionCliente, opcionTrabajador, idCliente;
-        String nombreCliente, orden;
+        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, idLibro, isbn, idCliente, pago;
+        String nombreCliente, orden, rentaLibro, genero;
 
         do {
             System.out.println("---Cafe Biblioteca---");
@@ -87,13 +87,59 @@ public class Principal {
                                         System.out.println("No tenemos '"+orden +"' en inventario"); 
                                     break; 
                                 case 2: 
+                                    inventario.mostrarEstantes(); 
+                                    System.out.println("La busqueda la realizaras por: \n1. Nombre del libro\n2. ISBN y género\n3. ID\n4. Ya no deseo rentar un libro\nOpcion: ");
+                                    opcionBusqueda = sc.nextInt();
+                                    sc.nextLine();
+                                    switch (opcionCliente) {
+                                        case 1: 
+                                            System.out.print("Ingresa el nombre del libro que deseas rentar, el nombre debe de ser idéntico: ");
+                                            rentaLibro = sc.nextLine();
+                                            seleccionLibro = inventario.getLibro(rentaLibro); 
+                                            break; 
+                                        case 2: 
+                                            System.out.print("Ingresa exactamente el ISBN del libro: ");
+                                            isbn = sc.nextInt(); 
+                                            sc.nextLine(); 
+                                            System.out.print("Ingresa el genero: ");
+                                            genero = sc.nextLine(); 
+                                            seleccionLibro = inventario.getLibro(isbn, genero);
+                                            break;
+                                        case 3: 
+                                            System.out.print("Ingresa el ID del libro: ");
+                                            idLibro = sc.nextInt();
+                                            sc.nextLine();
+                                            seleccionLibro = inventario.getLibro(idLibro); 
+                                            break;
+                                        case 4:    
+                                            System.out.println("No rentaste nada..."); 
+                                        default:
+                                            System.out.println("Opcion invalida...");
+                                    }
+                                    if (opcionBusqueda!=4){
+                                        if (seleccionLibro == null)
+                                            System.out.println("No tenemos ese libro...");
+                                        else
+                                            seleccionado.rentarLibro(seleccionLibro, inventario);
+                                    }
                                     break;
                                 case 3: 
                                     break;
                                 case 4: 
+                                    do { 
+                                        seleccionado.cobrar(0);
+                                        System.out.print("Ingresa tu pago: ");
+                                        pago = sc.nextInt(); 
+                                        sc.nextLine(); 
+                                        seleccionado.pagarCuenta(pago);
+                                    } while (seleccionado.getCuenta()<=0);
                                     break; 
                                 case 5:
                                     seleccionado = null;
+                                    seleccionAlimento = null;
+                                    seleccionEstante = null;
+                                    seleccionLibro = null; 
+
                                     System.out.println("Saliendo...");
                                     break;
                                 default:
@@ -108,11 +154,11 @@ public class Principal {
                         System.out.println("1. Agregar/quitar comida");
                         System.out.println("2. Agregar/quitar libros");
                         System.out.println("3. Agregar/quitar estantes");
-                        System.out.println("4. Slir");
+                        System.out.println("4. Salir");
                         System.out.print("Opcion trabajador: ");
-                        opcionCliente = sc.nextInt();
+                        opcionTrabajador = sc.nextInt();
                         sc.nextLine();
-                        switch (opcionCliente) {
+                        switch (opcionTrabajador) {
                             case 1:
                                 break;
                             case 2:
@@ -127,7 +173,7 @@ public class Principal {
                                 System.out.println("Opcion invalida.");
                         }
                     }
-                    while (opcionCliente != 4);
+                    while (opcionTrabajador != 4);
                     break; 
                 case 4:
                     System.out.println("Terminando programa...");
