@@ -25,6 +25,7 @@ public class Libro {
      * @author Equipo 13
      * @version 1.0
      * @see Libro
+     * </p>
      */
     public Libro(String titulo, String autor, String editorial, String genero) {
         this.titulo = titulo;
@@ -42,6 +43,7 @@ public class Libro {
      * Crea aleatoriamente un ISBN que esta entre 10,000 y 60,000
      *
      * @return isbn del Libro
+     * </p>
      */
     private static int genISBN(){
         Random aleatorio = new Random();
@@ -54,6 +56,7 @@ public class Libro {
      * Devuelve el titulo del libro.
      *
      * @return titulo del libro
+     * </p>
      */
     public String getTitulo() {
         return titulo;
@@ -64,6 +67,7 @@ public class Libro {
      * Devuelve el autor del libro.
      *
      * @return autor del libro
+     * </p>
      */
     public String getAutor() {
         return autor;
@@ -74,6 +78,7 @@ public class Libro {
      * Devuelve la editorial del libro.
      *
      * @return editorial del libro
+     * </p>
      */
     public String getEditorial() {
         return editorial;
@@ -84,6 +89,7 @@ public class Libro {
      * Devuelve el genero del libro.
      *
      * @return genero del libro
+     * </p>
      */
     public String getGenero() {
         return genero;
@@ -94,6 +100,7 @@ public class Libro {
      * Devuelve el ISBN del libro.
      *
      * @return ISBN del libro
+     * </p>
      */
     public int getISBN() {
         return ISBN;
@@ -104,6 +111,7 @@ public class Libro {
      * Devuelve el estatus del libro.
      *
      * @return estatus del libro
+     * </p>
      */
     public String getEstatus() {
         return estatus;
@@ -114,6 +122,7 @@ public class Libro {
      * Devuelve un booleano si está en el inventario.
      *
      * @return "True" o "False"
+     * </p>
      */
     public boolean isEnInventario() {
         return enInventario;
@@ -124,6 +133,7 @@ public class Libro {
      * Devuelve el identificador del libro.
      *
      * @return id del libro
+     * </p>
      */
     public int getId() {
         return id;
@@ -134,6 +144,7 @@ public class Libro {
      * Devuelve el contador de libros.
      *
      * @return idContador de libros
+     * </p>
      */
     public static int getIdContador() {
         return idContador++;
@@ -144,6 +155,7 @@ public class Libro {
      * Hace autoreferencia al titulo del libro para modificarlo.
      *
      * @param titulo nuevo del libro
+     * </p>
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -154,6 +166,7 @@ public class Libro {
      * Hace autoreferencia al autor del libro para modificarlo.
      *
      * @param autor nuevo del libro
+     * </p>
      */
     public void setAutor(String autor) {
         this.autor = autor;
@@ -164,6 +177,7 @@ public class Libro {
      * Hace autoreferencia a la editorial del libro para modificarla.
      *
      * @param editorial nuevo del libro
+     * </p>
      */
     public void setEditorial(String editorial) {
         this.editorial = editorial;
@@ -174,6 +188,7 @@ public class Libro {
      * Hace autoreferencia al genero del libro para modificarla.
      *
      * @param genero nuevo del libro
+     * </p>
      */
     public void setGenero(String genero) {
         this.genero = genero;
@@ -184,6 +199,7 @@ public class Libro {
      * Hace autoreferencia al estatus del libro para modificarla.
      *
      * @param estatus nuevo del libro "Disponible" o "No disponible"
+     * </p>
      */
     public void setEstatus(String estatus) {
         this.estatus = estatus;
@@ -194,6 +210,7 @@ public class Libro {
      * Hace autoreferencia al estado del libro en el inventario para modificarla.
      *
      * @param enInventario sí esta en inventario o no "True" o "False". 
+     * </p>
      */
     public void setEnInventario(boolean enInventario) {
         this.enInventario = enInventario;
@@ -206,7 +223,7 @@ public class Libro {
      * @version 1.0
      * @return Cadena de texto con todos los atributos mencionados. 
      * @see Libro
-     *
+     * </p>
      */
     public String toString() {
         return "Libro {" + "titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial + ", genero=" + genero + ", isbn=" + ISBN + ", estatus=" + estatus + ", enInventario=" + enInventario + ", id=" + id + '}';

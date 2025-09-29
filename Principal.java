@@ -1,6 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * <h2>Café Biblioteca — Proyecto de colecciones</h2>
+ * <p>
+ * Programa principal gestiona un café-biblioteca. Permite registrar clientes, 
+ * realizar pedidos de alimentos, rentar/devolver libros y administrar inventario 
+ * (alimentos, libros y estantes).
+ * </p>
+ *
+ * <h3>Características</h3>
+ * <ul>
+ * <li>Alta y selección de clientes.</li>
+ * <li>Orden de alimentos y cobro a la cuenta del cliente.</li>
+ * <li>Renta y devolución de libros con validaciones básicas.</li>
+ * <li>Operaciones de trabajador: agregar/quitar alimentos, agregar libros y
+ * estantes.</li>
+ * </ul>
+ *
+ * <h3>Dependencias</h3>
+ * <p>
+ * Requiere las clases {@code Cliente}, {@code Inventario}, {@code Alimento},
+ * {@code Libro} y {@code Estante}. La interacción se realiza mediante
+ * {@link java.util.Scanner}.
+ * </p>
+ *
+ * <h3>Notas</h3>
+ * <ul>
+ * <li>El menú se ejecuta en un bucle hasta elegir la opción “Salir”.</li>
+ * <li>Se cierra el {@code Scanner} al finalizar la ejecución.</li>
+ * </ul>
+ *
+ * @author Equipo 13
+ * @version 1.0
+ */
 
 public class Principal {
     public static void main (String[] args){

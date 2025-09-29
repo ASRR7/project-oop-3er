@@ -14,6 +14,7 @@ public class Alimento{
      * @author Equipo 13
      * @version 1.0
      * @see Alimento
+     * </p>
      */
     public Alimento(String nombre, double precio){
         this.nombre = nombre;
@@ -26,6 +27,7 @@ public class Alimento{
      * <p>
      * Devuelve el precio del alimento.
      * @return precio del alimento
+     * </p>
      */
     public double getPrecio() {
         return precio;
@@ -36,6 +38,7 @@ public class Alimento{
      * <p>
      * Hace autoreferencia al precio del alimento para modificarlo. 
      * @param precio nuevo del alimento
+     * </p>
      */
     public void setPrecio(double precio) {
         this.precio = precio;
@@ -45,6 +48,7 @@ public class Alimento{
      * <p>
      * Devuelve el nombre del alimento.
      * @return nombre del alimento
+     * </p>
      */
     public String getNombre() {
         return nombre;
@@ -54,6 +58,7 @@ public class Alimento{
      * <p>
      * Hace autoreferencia al nombre del alimento para modificarlo.
      * @param nuevo nombre del alimento
+     * </p>
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -63,6 +68,7 @@ public class Alimento{
      * <p>
      * Devuelve el código de barras del alimento.
      * @return código de barras del alimento.
+     * </p>
      */
     public int getCodigoBarras() {
         return codigoBarras;
