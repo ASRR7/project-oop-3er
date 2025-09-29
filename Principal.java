@@ -22,7 +22,7 @@ public class Principal {
 
         int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, opcionTAgregarQuitar, idLibro, isbn, idCliente, pasillo;
         double pago, precio; 
-        String nombreCliente, orden, rentaLibro, genero, nombreAlimento, generoEstante, nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro;
+        String nombreCliente, orden, rentaLibro, genero, nombreAlimento, generoEstante, nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro, libroAQuitar;
 
         do {
             System.out.println("---Cafe Biblioteca---");
@@ -204,7 +204,7 @@ public class Principal {
                                 opcionTAgregarQuitar = sc.nextInt();
                                 sc.nextLine();
                                 switch (opcionTAgregarQuitar) {
-                                    case 1:
+                                    /*case 1:
                                         System.out.print("Cuál es el nombre del nuevo libro: "); //titulo, autor, editorial, genero 
                                         nombreNuevoLibro = sc.nextLine();
                                         System.out.print("Cuál es el autor del nuevo libro: ");
@@ -218,21 +218,21 @@ public class Principal {
                                                 inventario.agregarLibro(nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro);
                                                 break;
                                             }
+                                            else 
+                                                inventario.agregarLibro(nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, "Mixto");
                                         }
-
-                                        
-                                        seleccionLibro = inventario.getLibro(rentaLibro);
+                                        seleccionLibro = inventario.getLibro(nombreNuevoLibro);
 
                                         if (seleccionAlimento != null) {
                                             System.out.println("El libro: " + seleccionLibro.toString() + " se agrego exitosamente");
                                         }
                                         break;
                                     case 2:
-                                        inventario.mostrarAlimentos();
-                                        System.out.print("Cual es el nombre del alimento que se va a retirar: ");
-                                        nombreAlimento = sc.nextLine();
-                                        inventario.quitarAlimento(nombreAlimento);
-                                        break;
+                                        inventario.mostrarEstantes();
+                                        System.out.print("Cuál es el nombre del libro que se va a quitar: "); //titulo, autor, editorial, genero 
+                                        libroAQuitar = sc.nextLine();
+                                        
+                                        break;*/
                                     case 3:
                                         System.out.println("Saliendo...");
                                         break;
