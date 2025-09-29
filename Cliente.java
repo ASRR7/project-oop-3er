@@ -73,6 +73,15 @@ public class Cliente{
         System.out.println("Su cuenta actual es de: $"+ cuenta);
     }
 
+    public boolean loTengoRentado(Libro l){
+        for(Libro libro : this.getLibrosRentados()){
+            if( l.getId() == libro.getId() ){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void rentarLibro(Libro libroRentado, Inventario inventario){
         Estante estante = inventario.getEstantes().get(libroRentado.getGenero());
 
@@ -111,11 +120,12 @@ public class Cliente{
         }
         
     }
-    
+
     public void printLibrosRentados(){
         System.out.println("============================\nLibros rentados:");
         for(Libro libro: this.getLibrosRentados()){
             System.out.println(libro.toString());
         }
+        System.out.println("------------------------------------");
     }
 }
