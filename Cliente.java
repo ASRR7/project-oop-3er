@@ -53,7 +53,7 @@ public class Cliente{
         double cambio = 0;
         double cuenta = this.getCuenta();
         if(pago>=cuenta){
-            cambio = cuenta - pago;
+            cambio = pago - cuenta;
             System.out.println("Cuenta pagada. ($" + cuenta + ")");
             this.setCuenta(0);
             System.out.println("Cambio: $" + cambio);
