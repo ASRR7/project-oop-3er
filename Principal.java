@@ -124,7 +124,7 @@ public class Principal {
                                 System.out.println("Saliendo...");
                                 break;
                             default:
-                                System.out.println("Opcion invalida...");
+                                System.out.println("Opcion invalida.");
                         }
                     }
                     while (opcionCliente != 4);
@@ -138,6 +138,4 @@ public class Principal {
         } while (opcion != 4);
         sc.close();
     }
-
-    
 }
