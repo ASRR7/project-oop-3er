@@ -161,11 +161,11 @@ public class Principal {
                         opcionTrabajador = sc.nextInt();
                         sc.nextLine();
                         switch (opcionTrabajador) {
-                            case 1:
+                            case 1://Agregar/quitar comida
                                 break;
-                            case 2:
+                            case 2://Agregar/quitar libros
                                 break;
-                            case 3:
+                            case 3://Agregar/quitar estantes
                                 break;
                             case 4:
                                 seleccionado = null;
