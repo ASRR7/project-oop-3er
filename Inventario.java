@@ -83,18 +83,44 @@ public class Inventario {
     }
 
 
-    
+    /**
+     * <h2>Metodo agregarLibro</h2>
+     * Dado los atributos de un líbro, lo genera y lo acomoda en el estante apropiado
+     * @param titulo del libro
+     * @param genero  del libro
+     * @param autor del libro
+     * @param editorial del libro
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void agregarLibro(String titulo, String autor, String editorial, String genero){
         Estante estante = this.getEstantes().get(genero);
         Libro libroN = new Libro(titulo, autor, editorial, genero);
         estante.insertarLibro( libroN );
     }
 
+    /**
+     * <h2>Metodo consultarCantidad</h2>
+     * Dado un género, consulta la cantidad de libros en el estante correspondiente a dicho género
+     * @param genero del estante
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public int consultarCantidad(String genero){
         Estante estante = this.getEstantes().get(genero);//Obtiene el estante correspondiente al genero
         return estante.getCantidadLibros();
     }
-
+    /**
+     * <h2>Metodo consultarCantidadTitulo</h2>
+     * Dado un título, regresa la cantidad de libros con ese mismo título iterando por
+     * cada estante dentro del mapa de estantes
+     * @param titulo del libro a buscar
+     * @return cantidad de libros con el título correspondiente
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public int consultarCantidadTitulo(String titulo){
         int cantidad = 0;
         //Ciclo que itera en el map usando entrySet para recorrer todos los hash (keys)
@@ -104,7 +130,15 @@ public class Inventario {
         }
         return cantidad; //Cantidad de libros en todo el inventario
     }
-
+    /**
+     * <h2>Metodo getAlimentoNombre</h2>
+     * Dado el nombre de un alimento, devuelve el alimento si este se encuentra
+     * en la lista de alimentos; de lo contrario se regresa null
+     * @param alimentoNombre , nombre del alimentoa buscar
+     * @return alimento con el nombre correspondiente, null si no se encuentra
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public Alimento getAlimentoNombre(String alimentoNombre){
         for ( Alimento alimento : this.getAlimentos() ) {
             if( alimentoNombre.equals( alimento.getNombre() ) ){
@@ -113,7 +147,15 @@ public class Inventario {
         }
         return null;
     }
-
+    /**
+     * <h2>Metodo hayAlimento</h2>
+     * Dado el nombre de un alimento, devuelve un booleano correspondiente a
+     * si se encuentra o no
+     * @param alimentoNombre , nombre del alimento a buscar
+     * @return true si el alimento con el nombre indicado se encuentra; false de lo contrario
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public boolean hayAlimento(String alimentoNombre){
         for ( Alimento alimento : this.getAlimentos() ) {
             if( alimentoNombre.equals( alimento.getNombre() ) ){
@@ -122,12 +164,25 @@ public class Inventario {
         }
         return false;
     }
-
+    /**
+     * <h2>Metodo quitarAlimento</h2>
+     * Dado el nombre de un alimento, elimina el objeto alimento con el nombre correspondiente
+     * @param alimentoNombre , nombre del alimento a eliminar
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void quitarAlimento(String alimentoNombre){
         Alimento alimento = this.getAlimentoNombre(alimentoNombre);
         this.getAlimentos().remove(alimento);
     }
-
+    /**
+     * <h2>Metodo mostrarAlimentos</h2>
+     * Muestra todos los alimentos en la lista de alimentos actuales
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void mostrarAlimentos(){
         System.out.println("==========================\nAlimentos en inventario: ");
         for ( Alimento alimento : this.getAlimentos() ) {
@@ -135,22 +190,54 @@ public class Inventario {
         }
         System.out.println("----------------------------------------------\n");
     }
-
+    /**
+     * <h2>Metodo mostrarEstantes</h2>
+     * Imprime cada uno de los estantes encontrados
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void mostrarEstantes(){
         for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
             estante.getValue().print();
         }
     }
+    /**
+     * <h2>Metodo mostrarEstantes</h2>
+     * Dado un género especificado, imprime el estante con el género correspondiente
+     * @param genero del estante a buscar
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void mostrarEstantes(String genero){
         Estante estante = this.getEstantes().get(genero);
         estante.print();
     }
 
+    /**
+     * <h2>Metodo agregarEstante</h2>
+     * Dado un género y pasillo, se crea un objeto Estante y se agrega al hashMap de estantes
+     * @param genero del estante a añadir
+     * @param pasillo del estante a añadir
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void agregarEstante(String genero, int pasillo){
         Estante es = new Estante(genero, pasillo);
         this.estantes.put(genero, es);
     }
 
+    /**
+     * <h2>Metodo agregarAlimento</h2>
+     * Dado el nombre de un alimento y su precio, lo agrega a la lista de alimentos
+     * @param nombreAlimento nombre del alimento a agregar
+     * @param precio del alimento a agregar
+     * @return void
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void agregarAlimento(String nombreAlimento, double precio){
         Alimento nuevoAlimento = new Alimento(nombreAlimento, precio);
         alimentos.add(nuevoAlimento);
@@ -158,6 +245,13 @@ public class Inventario {
         System.out.println("Alimento agregado correctamente.");
     }
 
+    /**
+     * <h2>Metodo printGeneros</h2>
+     * Imprime cada uno de los géneros de los estantes
+     * @return el número de estantes
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public int printGeneros(){
         System.out.println("========================\nGeneros");
         int c = 0;
@@ -168,7 +262,15 @@ public class Inventario {
         System.out.println("------------------------------------------");
         return c;
     }
-
+    /**
+     * <h2>Metodo numToGenero</h2>
+     * De acuerdo al número proporcionado al usuario, devuelve el género.
+     * Este se usa en el menú para seleccionar el género por medio de un menú.
+     * @param numGenero número del género seleccionado por el usuario
+     * @return el género seleccionado
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public String numToGenero(int numGenero){
         int c = 1;
         for (Map.Entry<String, Estante> estante : this.getEstantes().entrySet()) {
@@ -179,7 +281,12 @@ public class Inventario {
         }
         return "Mixto";
     }
-
+    /**
+     * <h2>Metodo agregarDatosIniciales</h2>
+     * Agrega estantes, alimentos y libros de muestra para usarse
+     * @author Equipo 12 + 1
+     * @version 1.0
+     * */
     public void agregarDatosIniciales(){
         this.agregarAlimento( "Coca Cola", 18 );
         this.agregarAlimento( "Cafe Express", 28 );
