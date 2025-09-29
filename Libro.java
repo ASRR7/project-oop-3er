@@ -43,6 +43,8 @@ public class Libro {
      * Crea aleatoriamente un ISBN que esta entre 10,000 y 60,000.
      * </p>
      * @return isbn del Libro
+     * @author Equipo 13
+     * @version 1.0
      */
     private static int genISBN(){
         Random aleatorio = new Random();
@@ -55,6 +57,8 @@ public class Libro {
      * Devuelve el titulo del libro.
      * </p>
      * @return titulo del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getTitulo() {
         return titulo;
@@ -65,6 +69,8 @@ public class Libro {
      * Devuelve el autor del libro.
      * </p>
      * @return autor del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getAutor() {
         return autor;
@@ -75,6 +81,8 @@ public class Libro {
      * Devuelve la editorial del libro.
      * </p>
      * @return editorial del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getEditorial() {
         return editorial;
@@ -85,6 +93,8 @@ public class Libro {
      * Devuelve el genero del libro.
      * </p>
      * @return genero del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getGenero() {
         return genero;
@@ -95,6 +105,8 @@ public class Libro {
      * Devuelve el ISBN del libro.
      * </p>
      * @return ISBN del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public int getISBN() {
         return ISBN;
@@ -105,6 +117,8 @@ public class Libro {
      * Devuelve el estatus del libro.
      * </p>
      * @return estatus del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public String getEstatus() {
         return estatus;
@@ -115,6 +129,8 @@ public class Libro {
      * Devuelve un booleano si está en el inventario.
      * </p>
      * @return "True" o "False"
+     * @author Equipo 13
+     * @version 1.0
      */
     public boolean isEnInventario() {
         return enInventario;
@@ -125,6 +141,8 @@ public class Libro {
      * Devuelve el identificador del libro.
      * </p>
      * @return id del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public int getId() {
         return id;
@@ -135,6 +153,8 @@ public class Libro {
      * Devuelve el contador de libros.
      * </p>
      * @return idContador de libros
+     * @author Equipo 13
+     * @version 1.0
      */
     public static int getIdContador() {
         return idContador++;
@@ -145,6 +165,8 @@ public class Libro {
      * Hace autoreferencia al titulo del libro para modificarlo.
      * </p>
      * @param titulo nuevo del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -155,6 +177,8 @@ public class Libro {
      * Hace autoreferencia al autor del libro para modificarlo.
      * </p>
      * @param autor nuevo del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setAutor(String autor) {
         this.autor = autor;
@@ -165,6 +189,8 @@ public class Libro {
      * Hace autoreferencia a la editorial del libro para modificarla.
      * </p>
      * @param editorial nuevo del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setEditorial(String editorial) {
         this.editorial = editorial;
@@ -175,6 +201,8 @@ public class Libro {
      * Hace autoreferencia al genero del libro para modificarla.
      * </p>
      * @param genero nuevo del libro
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setGenero(String genero) {
         this.genero = genero;
@@ -185,6 +213,8 @@ public class Libro {
      * Hace autoreferencia al estatus del libro para modificarla.
      * </p>
      * @param estatus nuevo del libro "Disponible" o "No disponible".
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setEstatus(String estatus) {
         this.estatus = estatus;
@@ -195,6 +225,8 @@ public class Libro {
      * Hace autoreferencia al estado del libro en el inventario para modificarla.
      * </p>
      * @param enInventario sí esta en inventario o no "True" o "False". 
+     * @author Equipo 13
+     * @version 1.0
      */
     public void setEnInventario(boolean enInventario) {
         this.enInventario = enInventario;
