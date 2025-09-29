@@ -20,9 +20,9 @@ public class Principal {
         Libro seleccionLibro = null; 
         Estante seleccionEstante=null; 
 
-        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, opcionTAgregarQuitar, opcionGenero, idLibro, isbn, idCliente, pasillo;
+        int opcion, opcionCliente, opcionTrabajador, opcionBusqueda, opcionTAgregarQuitar, opcionGenero, idLibro, idCliente, pasillo;
         double pago, precio; 
-        String nombreCliente, orden, rentaLibro, genero, nombreAlimento, generoEstante, nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro, libroAQuitar;
+        String nombreCliente, orden, rentaLibro, nombreAlimento, generoEstante, nombreNuevoLibro, autorNuevoLibro, editorialNuevoLibro, generoNuevoLibro;
 
         do {
             System.out.println("---Cafe Biblioteca---");
