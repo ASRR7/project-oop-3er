@@ -6,15 +6,14 @@ public class Alimento{
     /**
      * <h2>Constructor Alimento</h2>
      * <p>
-     * Inicializa un objeto de tipo Alimento asignándole nombre, precio y un
+     * Crea un objeto de tipo Alimento asignándole nombre, precio y un
      * código de barras único generado automáticamente.
-     *
+     * </p>
      * @param nombre el nombre del alimento
      * @param precio el precio del alimento
      * @author Equipo 13
      * @version 1.0
      * @see Alimento
-     * </p>
      */
     public Alimento(String nombre, double precio){
         this.nombre = nombre;
@@ -26,8 +25,8 @@ public class Alimento{
      * <h2>Metodo getPrecio</h2>
      * <p>
      * Devuelve el precio del alimento.
-     * @return precio del alimento
      * </p>
+     * @return precio del alimento
      */
     public double getPrecio() {
         return precio;
@@ -37,8 +36,8 @@ public class Alimento{
      * <h2>Metodo setPrecio</h2>
      * <p>
      * Hace autoreferencia al precio del alimento para modificarlo. 
-     * @param precio nuevo del alimento
      * </p>
+     * @param precio nuevo del alimento
      */
     public void setPrecio(double precio) {
         this.precio = precio;
@@ -47,8 +46,8 @@ public class Alimento{
      * <h2>Metodo getNombre</h2>
      * <p>
      * Devuelve el nombre del alimento.
-     * @return nombre del alimento
      * </p>
+     * @return nombre del alimento
      */
     public String getNombre() {
         return nombre;
@@ -57,8 +56,8 @@ public class Alimento{
      * <h2>Metodo setNombre</h2>
      * <p>
      * Hace autoreferencia al nombre del alimento para modificarlo.
-     * @param nuevo nombre del alimento
      * </p>
+     * @param nuevo nombre del alimento
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -67,8 +66,8 @@ public class Alimento{
      * <h2>Metodo getCodigoBarras</h2>
      * <p>
      * Devuelve el código de barras del alimento.
-     * @return código de barras del alimento.
      * </p>
+     * @return código de barras del alimento.
      */
     public int getCodigoBarras() {
         return codigoBarras;
